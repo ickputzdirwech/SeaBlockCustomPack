@@ -1,0 +1,26 @@
+# Startup Settings
+
+*
+*
+
+# Map generation settings
+
+* Cliffs of ?
+* Research queue on
+*
+
+# Hide recipes and items
+
+*
+
+# Order
+
+* Alt. furnace recipes
+* Alt. boiler recipes
+* 
+
+# Icons
+
+* Adjustable inserter GUI
+* Logistics tab
+* Bob's Logistics tab

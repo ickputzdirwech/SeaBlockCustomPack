@@ -1,0 +1,27 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2020-12-20
+  Features:
+    -
+  Changes:
+    - Added data-final-fixes.lua
+    -
+    - Added settings-updates.lua
+    - Startup setting "angels-enable-converter" from "angelspetrochem" default value is now "false"
+    - Startup setting "angels-enable-auto-barreling" from "angelsrefining" default value is now "true"
+    - Startup setting "bobmods-mining-steamminingdrills" from "bobmining" default value is now "false" and hidden is now "true"
+    - Startup setting "spidertron-remote" from "Shortcuts-ick" default value is now "enabled-hidden"
+
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2020-12-20
+  Features:
+    - Initial release. Forked from SeaBlockMetaPack_1.1.0
+  Changes:
+    - Added changelog.txt
+    - Added README.md
+    - Added LICENSE.txt (MIT)
+    - Added minimal versions to all dependencies
+    - Removed dependencies: Explosive Excavation and LandfillPainting
+    - Made dependency optional: FNEI
+    - New optional dependencies: FactoryPlanner, inland_pumps, ModuleInserter, reskins-angels, reskins-bobs, Shortcuts-ick and SqueakThrough
