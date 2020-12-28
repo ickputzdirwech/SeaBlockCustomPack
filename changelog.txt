@@ -1,16 +1,21 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
-Date: 2020-12-20
+Date: 2020-12-27
   Features:
-    -
+    - All offshore pumps can now be placed anywhere
+    - Hid entities: burner and steam inserters, mining drills and pumpjacks, armoured rolling stock, burner and fluid heat sources
+    - Hid items: ore silos, converter valve, burner generators, oil boiler, diesel generator, pollution module components, combat robots and their components
+    - Hid all now useless technologies
+    - Changed icons of logistics, bob's logistics and bob's materials tabs.
+    - Merged intermediate products and bob's intermediates tabs.
+    - Reordered lots of stuff in logistics, bob's logistics, production, modules, intermediate products, bob's materials, combat, metallurgy casting, petrochemical refining and barrelling and fluid control tabs.
   Changes:
-    - Added data-final-fixes.lua
-    -
-    - Added settings-updates.lua
-    - Startup setting "angels-enable-converter" from "angelspetrochem" default value is now "false"
-    - Startup setting "angels-enable-auto-barreling" from "angelsrefining" default value is now "true"
+    - Startup setting "angels-enable-auto-barrelling" from "angelsrefining" default value is now "true"
+    - Startup settings regarding starting resources from "angelsrefining" are now hidden
     - Startup setting "bobmods-mining-steamminingdrills" from "bobmining" default value is now "false" and hidden is now "true"
     - Startup setting "spidertron-remote" from "Shortcuts-ick" default value is now "enabled-hidden"
+    - New dependency: A Sea Block Config
+    - Removed optional dependency: inland_pumps
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
@@ -24,4 +29,4 @@ Date: 2020-12-20
     - Added minimal versions to all dependencies
     - Removed dependencies: Explosive Excavation and LandfillPainting
     - Made dependency optional: FNEI
-    - New optional dependencies: FactoryPlanner, inland_pumps, ModuleInserter, reskins-angels, reskins-bobs, Shortcuts-ick and SqueakThrough
+    - New optional dependencies: FactoryPlanner, flib, inland_pumps, ModuleInserter, reskins-angels, reskins-bobs, reskins-library, Shortcuts-ick and SqueakThrough
