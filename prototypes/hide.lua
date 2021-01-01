@@ -1,177 +1,179 @@
--- HIDE RECIPES AND ITEMS
-local function hide_item(type, name)
-  if data.raw.recipe[name] then
-    data.raw.recipe[name].hidden = true
+-- FUNCTIONS
+local function set_flag_hidden(name, type)
+  local item = data.raw[type][name]
+  if item.flags then
+    table.insert(item.flags, "hidden")
+  else
+    item.flags = {"hidden"}
   end
+end
+
+local function set_hidden(name, type)
   if data.raw[type][name] then
-    if data.raw[type][name].flags then
-      table.insert(data.raw[type][name].flags, "hidden")
-    else
-      data.raw[type][name].flags = {"hidden"}
+    data.raw[type][name].hidden = true
+  end
+end
+
+local function remove_effect(name, tech_name, effect_type, key)
+  if data.raw.technology[tech_name] and data.raw.technology[tech_name].effects then
+    local tech = data.raw.technology[tech_name]
+    for i, effect in pairs(tech.effects) do
+      if effect.type == effect_type and effect[key] == name then
+        table.remove(tech.effects, i)
+      end
     end
   end
 end
 
-hide_item("item-with-entity-data", "bob-armoured-locomotive")
-hide_item("item-with-entity-data", "bob-armoured-locomotive-2")
-hide_item("item-with-entity-data", "bob-armoured-cargo-wagon")
-hide_item("item-with-entity-data", "bob-armoured-cargo-wagon-2")
-hide_item("item-with-entity-data", "bob-armoured-fluid-wagon")
-hide_item("item-with-entity-data", "bob-armoured-fluid-wagon-2")
-
-hide_item("item", "silo-ore1")
-hide_item("item", "silo-ore2")
-hide_item("item", "silo-ore3")
-hide_item("item", "silo-ore4")
-hide_item("item", "silo-ore5")
-hide_item("item", "silo-ore6")
-hide_item("item", "silo-coal")
-
-hide_item("item", "burner-inserter")
-hide_item("item", "steam-inserter")
-hide_item("item", "valve-converter")
-
-hide_item("tool", "pollution-clean-processor")
-hide_item("item", "pollution-clean-processor-2")
-hide_item("item", "pollution-clean-processor-3")
-hide_item("tool", "pollution-create-processor")
-hide_item("item", "pollution-create-processor-2")
-hide_item("item", "pollution-create-processor-3")
-
-hide_item("item", "accumulator")
-hide_item("item", "burner-generator")
-hide_item("item", "big-burner-generator")
-hide_item("item", "burner-reactor")
-hide_item("item", "burner-reactor-2")
-hide_item("item", "burner-reactor-3")
-hide_item("item", "fluid-reactor")
-hide_item("item", "fluid-reactor-from-fluid-furnace")
-hide_item("item", "fluid-reactor-2")
-hide_item("item", "fluid-reactor-3")
-hide_item("item", "petroleum-generator")
-hide_item("item", "oil-steam-boiler")
-
-hide_item("item", "robot-brain-combat")
-hide_item("item", "robot-brain-combat-2")
-hide_item("item", "robot-brain-combat-3")
-hide_item("item", "robot-brain-combat-4")
-hide_item("item", "robot-tool-combat")
-hide_item("item", "robot-tool-combat-2")
-hide_item("item", "robot-tool-combat-3")
-hide_item("item", "robot-tool-combat-4")
-hide_item("capsule", "defender-capsule")
-hide_item("capsule", "distractor-capsule")
-hide_item("capsule", "destroyer-capsule")
-hide_item("capsule", "bob-laser-robot-capsule")
-hide_item("item", "defender-robot")
-hide_item("item", "distractor-robot")
-hide_item("item", "destroyer-robot")
-hide_item("item", "bob-laser-robot")
-hide_item("item", "bob-robot-gun-drone")
-hide_item("item", "bob-robot-laser-drone")
-hide_item("item", "bob-robot-flamethrower-drone")
-hide_item("item", "bob-robot-plasma-drone")
-
--- HIDE ENTITIES
-local function hide_entity(type, name)
-  if data.raw[type][name] then
-    if data.raw[type][name].flags then
-      table.insert(data.raw[type][name].flags, "hidden")
-    else
-      data.raw[type][name].flags = {"hidden"}
+local function hide_stuff(name, item_type, entity_type, tech_name, effect_type)
+  set_hidden(name, "recipe")
+  if item_type then
+    if item_type == "fluid" then
+      set_hidden(name, "fluid")
+    elseif data.raw[item_type][name] then
+      set_flag_hidden(name, item_type)
     end
-    data.raw[type][name].next_upgrade = nil
+  end
+  if entity_type and data.raw[entity_type][name] then
+    set_flag_hidden(name, entity_type)
+    data.raw[entity_type][name].next_upgrade = nil
+  end
+  if tech_name then
+    if effect_type == "unlock-recipe" then
+      remove_effect(name, tech_name, effect_type, "recipe")
+    elseif effect_type == "landmine" then
+      remove_effect("landmine", tech_name, "ammo-damage", "ammo_category")
+    else
+      set_hidden(tech_name, "technology")
+    end
   end
 end
 
-hide_entity("inserter", "burner-inserter")
-hide_entity("inserter", "steam-inserter")
-hide_entity("accumulator", "accumulator")
 
-hide_entity("mining-drill", "burner-mining-drill")
-hide_entity("mining-drill", "electric-mining-drill")
-hide_entity("mining-drill", "pumpjack")
+-- LOGISTICS
+hide_stuff("bob-armoured-locomotive", "item-with-entity-data", "locomotive", "bob-armoured-railway")
+hide_stuff("bob-armoured-cargo-wagon", "item-with-entity-data", "cargo-wagon")
+hide_stuff("bob-armoured-locomotive-2", "item-with-entity-data", "locomotive", "bob-armoured-railway-2")
+hide_stuff("bob-armoured-cargo-wagon-2", "item-with-entity-data", "cargo-wagon")
+hide_stuff("bob-armoured-fluid-wagon", "item-with-entity-data", "fluid-wagon", "bob-armoured-fluid-wagon")
+hide_stuff("bob-armoured-fluid-wagon-2", "item-with-entity-data", "fluid-wagon", "bob-armoured-fluid-wagon-2")
 
-hide_entity("locomotive", "bob-armoured-locomotive")
-hide_entity("locomotive", "bob-armoured-locomotive-2")
-hide_entity("cargo-wagon", "bob-armoured-cargo-wagon")
-hide_entity("cargo-wagon", "bob-armoured-cargo-wagon-2")
-hide_entity("fluid-wagon", "bob-armoured-fluid-wagon")
-hide_entity("fluid-wagon", "bob-armoured-fluid-wagon-2")
+hide_stuff("silo-ore1", "item", nil, "ore-silos", "unlock-recipe")
+hide_stuff("silo-ore2", "item", nil, "ore-silos", "unlock-recipe")
+hide_stuff("silo-ore3", "item", nil, "ore-silos", "unlock-recipe")
+hide_stuff("silo-ore4", "item", nil, "ore-silos", "unlock-recipe")
+hide_stuff("silo-ore5", "item", nil, "ore-silos", "unlock-recipe")
+hide_stuff("silo-ore6", "item", nil, "ore-silos", "unlock-recipe")
+hide_stuff("silo-coal", "item", nil, "ore-silos", "unlock-recipe")
 
-hide_entity("reactor", "burner-reactor")
-hide_entity("reactor", "burner-reactor-2")
-hide_entity("reactor", "burner-reactor-3")
-hide_entity("reactor", "fluid-reactor")
-hide_entity("reactor", "fluid-reactor-2")
-hide_entity("reactor", "fluid-reactor-3")
 
--- HIDE TECHNOLOGIES
-local tech_list = {
-  "bob-armoured-railway",
-  "bob-armoured-railway-2",
-  "bob-armoured-fluid-wagon",
-  "bob-armoured-fluid-wagon-2",
-  "big-burner-generator",
-  "burner-reactor-1",
-  "fluid-reactor-1",
-  "burner-reactor-2",
-  "fluid-reactor-2",
-  "burner-reactor-3",
-  "fluid-reactor-3",
-  "OilBurning",
-  "defender",
-  "distractor",
-  "destroyer",
-  "bob-laser-robot",
-  "bob-robot-gun-drones",
-  "bob-robot-laser-drones",
-  "bob-robot-flamethrower-drones",
-  "bob-robot-plasma-drones",
-  "follower-robot-count-1",
-  "follower-robot-count-2",
-  "follower-robot-count-3",
-  "follower-robot-count-4",
-  "follower-robot-count-5",
-  "follower-robot-count-6",
-  "follower-robot-count-7",
-}
+-- BOBS-LOGISTICS
+hide_stuff("steam-inserter", "item", "inserter", "sct-automation-science-pack", "unlock-recipe")
 
-for _, name in pairs(tech_list) do
-  if data.raw.technology[name] then
-    data.raw.technology[name].hidden = true
-  end
+if settings.startup["ick-seablock-burner-inserter"].value == true then
+  hide_stuff("burner-inserter", "item", "inserter", "sb-startup2", "unlock-recipe")
 end
 
--- REMOVE RECIPE UNLOCKS
-if data.raw.technology["sct-automation-science-pack"] then
-  bobmods.lib.tech.remove_recipe_unlock("sct-automation-science-pack", "electric-mining-drill")
-  bobmods.lib.tech.remove_recipe_unlock("sct-automation-science-pack", "steam-mining-drill")
-  bobmods.lib.tech.remove_recipe_unlock("sct-automation-science-pack", "steam-inserter")
-  bobmods.lib.tech.remove_recipe_unlock("sct-automation-science-pack", "burner-generator")
-end
 
-if data.raw.technology["oil-gas-extraction"] then
-  bobmods.lib.tech.remove_recipe_unlock("oil-gas-extraction", "pumpjack")
-end
+-- PRODUCTION
+hide_stuff("burner-mining-drill", nil, "mining-drill")
+hide_stuff("electric-mining-drill", nil, "mining-drill")
+hide_stuff("pumpjack", nil, "mining-drill")
 
-if data.raw.technology["sb-startup2"] then
-  bobmods.lib.tech.remove_recipe_unlock("sb-startup2", "burner-inserter")
-end
-
-if data.raw.technology["angels-fluid-control"] then
-  bobmods.lib.tech.remove_recipe_unlock("angels-fluid-control", "valve-converter")
-end
-
-if data.raw.technology["ore-silos"] then
-  data.raw.technology["ore-silos"].effects = {{type = "unlock-recipe", recipe = "silo"}}
-end
-
-if data.raw.technology["electric-energy-accumulators"] and data.raw.technology["bob-electric-energy-accumulators-2"] then
-  data.raw.technology["electric-energy-accumulators"].effects = {{type = "unlock-recipe", recipe = "large-accumulator"}}
+hide_stuff("accumulator", "item", "accumulator", nil, "electric-energy-accumulators", "unlock-recipe")
+if data.raw.technology["electric-energy-accumulators"] and data.raw.recipe["large-accumulator"] then
+  table.insert(data.raw.technology["electric-energy-accumulators"].effects, {type = "unlock-recipe", recipe = "large-accumulator"})
   bobmods.lib.tech.remove_recipe_unlock("bob-electric-energy-accumulators-2", "large-accumulator")
 end
 
-if data.raw.technology["petroleum-generator"] then
-  data.raw.technology["petroleum-generator"].effects = {{type = "unlock-recipe", recipe = "petroleum-generator"}}
+hide_stuff("burner-generator", "item", nil, "sct-automation-science-pack", "unlock-recipe")
+hide_stuff("big-burner-generator", "item", nil, "big-burner-generator")
+hide_stuff("petroleum-generator", "item", nil, "petroleum-generator", "unlock-recipe")
+hide_stuff("oil-steam-boiler", "item", nil, "OilBurning")
+
+hide_stuff("burner-reactor", "item", "reactor", "burner-reactor-1")
+hide_stuff("burner-reactor-2", "item", "reactor", "burner-reactor-2")
+hide_stuff("burner-reactor-3", "item", "reactor", "burner-reactor-3")
+hide_stuff("fluid-reactor", "item", "reactor", "fluid-reactor-1")
+hide_stuff("fluid-reactor-from-fluid-furnace")
+hide_stuff("fluid-reactor-2", "item", "reactor", "fluid-reactor-2")
+hide_stuff("fluid-reactor-3", "item", "reactor", "fluid-reactor-3")
+
+
+-- MODULES
+hide_stuff("pollution-clean-processor", "tool")
+hide_stuff("pollution-clean-processor-2", "item")
+hide_stuff("pollution-clean-processor-3", "item")
+hide_stuff("pollution-create-processor", "tool")
+hide_stuff("pollution-create-processor-2", "item")
+hide_stuff("pollution-create-processor-3", "item")
+
+
+-- INTERMEDIATE-PRODUCTS
+hide_stuff("robot-brain-combat", "item")
+hide_stuff("robot-tool-combat", "item")
+hide_stuff("robot-brain-combat-2", "item")
+hide_stuff("robot-tool-combat-2", "item")
+hide_stuff("robot-brain-combat-3", "item")
+hide_stuff("robot-tool-combat-3", "item")
+hide_stuff("robot-brain-combat-4", "item")
+hide_stuff("robot-tool-combat-4", "item")
+
+
+-- COMBAT
+hide_stuff("spidertron-cannon", "item", nil, "tankotron", "unlock-recipe")
+
+hide_stuff("land-mine", "item", "land-mine", "land-mine")
+hide_stuff("distractor-mine", "item", "land-mine", "distractor-mine")
+hide_stuff("poison-mine", "item", "land-mine", "poison-mine")
+hide_stuff("slowdown-mine", "item", "land-mine", "slowdown-mine")
+hide_stuff(nil, nil, nil, "stronger-explosives-2", "landmine")
+hide_stuff(nil, nil, nil, "stronger-explosives-3", "landmine")
+hide_stuff(nil, nil, nil, "stronger-explosives-4", "landmine")
+hide_stuff(nil, nil, nil, "stronger-explosives-5", "landmine")
+hide_stuff(nil, nil, nil, "stronger-explosives-6", "landmine")
+hide_stuff(nil, nil, nil, "stronger-explosives-7", "landmine")
+
+hide_stuff("defender-robot", "item", nil, "defender")
+hide_stuff("distractor-robot", "item", nil, "distractor")
+hide_stuff("destroyer-robot", "item", nil, "destroyer")
+hide_stuff("bob-laser-robot", "item", "combat-robot", "bob-laser-robot")
+hide_stuff("defender-capsule", "capsule")
+hide_stuff("distractor-capsule", "capsule")
+hide_stuff("destroyer-capsule", "capsule")
+hide_stuff("bob-laser-robot-capsule", "capsule")
+hide_stuff("defender", nil, "combat-robot")
+hide_stuff("distractor", nil, "combat-robot")
+hide_stuff("destroyer", nil, "combat-robot")
+
+hide_stuff("bob-robot-gun-drone", "item", "unit", "bob-robot-gun-drones")
+hide_stuff("bob-robot-laser-drone", "item", "unit", "bob-robot-laser-drones")
+hide_stuff("bob-robot-flamethrower-drone", "item", "unit", "bob-robot-flamethrower-drones")
+hide_stuff("bob-robot-plasma-drone", "item", "unit", "bob-robot-plasma-drones")
+
+hide_stuff(nil, nil, nil, "follower-robot-count-1")
+hide_stuff(nil, nil, nil, "follower-robot-count-2")
+hide_stuff(nil, nil, nil, "follower-robot-count-3")
+hide_stuff(nil, nil, nil, "follower-robot-count-4")
+hide_stuff(nil, nil, nil, "follower-robot-count-5")
+hide_stuff(nil, nil, nil, "follower-robot-count-6")
+hide_stuff(nil, nil, nil, "follower-robot-count-7")
+
+hide_stuff("heavy-armor-2", "armor", nil, "bob-armor-making-3")
+hide_stuff("heavy-armor-3", "armor", nil, "bob-armor-making-4")
+
+if settings.startup["ick-seablock-walls-and-gates"].value == true then
+  hide_stuff("stone-wall", "item", nil, "stone-wall")
+  hide_stuff("gate", "item", nil, "gate")
+  hide_stuff("reinforced-wall", "item", nil, "reinforced-wall")
+  hide_stuff("reinforced-gate", "item")
 end
+
+
+-- ANGELS-FLUID-CONTROL
+hide_stuff("valve-converter", "item", nil, "angels-fluid-control", "unlock-recipe")
+
+
+-- WATER-TREATMENT
+hide_stuff("lithia-water", "fluid")
+hide_stuff("ground-water-pump", "item", nil, "water-treatment", "unlock-recipe")

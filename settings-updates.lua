@@ -5,7 +5,6 @@ local function change_default(type, name, new_value)
 end
 
 change_default("bool-setting", "angels-enable-auto-barreling", true)
-change_default("bool-setting", "bobmods-mining-steamminingdrills", false)
 change_default("string-setting", "spidertron-remote", "enabled-hidden")
 
 local function hide_setting(type, name)
@@ -14,7 +13,6 @@ local function hide_setting(type, name)
   end
 end
 
-hide_setting("bool-setting", "bobmods-mining-steamminingdrills")
 hide_setting("bool-setting", "angels-starting-resource-ore1")
 hide_setting("bool-setting", "angels-starting-resource-ore2")
 hide_setting("bool-setting", "angels-starting-resource-ore3")

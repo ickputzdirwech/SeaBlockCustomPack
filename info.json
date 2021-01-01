@@ -1,12 +1,12 @@
 {
   "name": "SeaBlockCustomPack",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "factorio_version": "1.1",
   "title": "ick's Sea Block Pack",
   "author": "ickputzdirwech",
   "contact": "ickputzdirwech@gmx.de",
   "homepage": "https://github.com/ickputzdirwech/SeaBlockCustomPack",
-  "description": "Custom version of the Sea Block Modpack. See changelog for changed dependencies. This mod does nothing by itself yet. But there might be some minor tweaks coming in future releases.",
+  "description": "Custom version of the Sea Block Pack. Other than the original mod pack this mod applies some small changes, mostly hiding unnecessary clutter and reordering stuff. All changes, including to dependencies, can be found in the description on the Factorio Mod Portal.",
   "dependencies": ["base >= 1.1.6",
     "A Sea Block Config >= 0.5.1",
     "angelsaddons-storage >= 0.0.4",
@@ -35,13 +35,14 @@
     "SeaBlock >= 0.5.0",
     "SpaceMod >= 1.1.0",
     "? baraws >= 1.1.1",
-    "? FactoryPlanner >= 1.1.11",
+    "? factoryplanner >= 1.1.11",
     "? flib >= 0.6.0",
     "? FNEI >= 0.4.0",
     "? ModuleInserter >= 5.2.2",
+    "? northifytool >= 1.1.0",
     "? reskins-angels >= 1.1.0",
     "? reskins-bobs >= 1.1.0",
     "? reskins-library >= 1.1.0",
     "? Shortcuts-ick >= 1.1.3",
-    "? SqueakThrough >= 1.8.1"]
+    "? Squeak Through >= 1.8.1"]
 }

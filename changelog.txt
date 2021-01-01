@@ -1,32 +1,112 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.1.1
-Date: 2020-12-27
-  Features:
-    - All offshore pumps can now be placed anywhere
-    - Hid entities: burner and steam inserters, mining drills and pumpjacks, armoured rolling stock, burner and fluid heat sources
-    - Hid items: ore silos, converter valve, burner generators, oil boiler, diesel generator, pollution module components, combat robots and their components
-    - Hid all now useless technologies
-    - Changed icons of logistics, bob's logistics and bob's materials tabs.
-    - Merged intermediate products and bob's intermediates tabs.
-    - Reordered lots of stuff in logistics, bob's logistics, production, modules, intermediate products, bob's materials, combat, metallurgy casting, petrochemical refining and barrelling and fluid control tabs.
+Version: 1.1.2
+Date: 2021-01-01
   Changes:
-    - Startup setting "angels-enable-auto-barrelling" from "angelsrefining" default value is now "true"
-    - Startup settings regarding starting resources from "angelsrefining" are now hidden
-    - Startup setting "bobmods-mining-steamminingdrills" from "bobmining" default value is now "false" and hidden is now "true"
-    - Startup setting "spidertron-remote" from "Shortcuts-ick" default value is now "enabled-hidden"
+    - Added list of all changes in README.md
+    - Updated description.
+    - Overhauled changelog.
+  Settings:
+    - Added startup setting "Hide burner inserter", default true.
+    - Added startup setting "Hide walls and gates", default true.
+  Dependencies:
+    - New optional dependency: northifytool
+  Recipes:
+    - Repair packs require their previous tier.
+    - Armors require their previous tier.
+    - Tankotrons require a tank instead of spidertron cannons.
+    - If burner inserters are enabled, they are an ingredient of the inserter.
+    - If walls and gates are enabled, reinforced walls and gates have normal walls and gates as ingredients.
+  Technologies:
+    - Raw gem recipes are unlocked by geode crystallization 1.
+    - Alien artifact recipes are unlocked by alien bio processing 3.
+    - Rubite and bobmonium ore crushing and lead and tin plate are unlocked by slag processing 1.
+    - Glass, copper, iron, lead and tin plate from ores are unlocked by mechanical refining.
+    - Silver plate is unlocked by hydro-refining.
+    - Advanced lead smelting is now dependent on slag processing 1.
+    - Advanced tin smelting is now dependent on slag processing 1.
+  Graphics:
+    - Changed diesel fuel recipe icon to the diesel fuel fluid icon.
+    - Added roman numerals to the icons of the three carbon dioxide recipes.
+    - New icons for thermal water recipes.
+    - Changed clean ceramic filter recipe icon to spent ceramic filter icon.
+  Locale:
+    - Renamed carbon dioxide recipes to "Carbon dioxide from charcoal" and "Carbon dioxide from carbon".
+    - Renamed coolant filtering recipes to "Coolant coal filtering" and "Coolant ceramic filtering".
+    - Renamed ceramic filter cleaning recipe to "Clean ceramic filter".
+    - Renamed diesel generator technology to "Diesel fuel".
+  Hidden:
+    - Hid ground water bore.
+    - Hid spidertron cannon.
+    - Hid landmines.
+    - Hid invar cobalt-steel and titanium-ceramic armor.
+    - Hid lithia water from GUIs.
+  Order:
+    - Moved "Barrelling and fluid control" tab behind "Bob's logistics" tab.
+    - Reordered "Barrelling and fluid control" tab. (WIP)
+    - Moved thermal bore and extractor in "water-treatment" tab.
+    - Reordered "Water treatment" tab.
+    - Reordered "Petrochemical refining" tab. (WIP)
+    - Moved carbon dioxide from wood pellets recipe in "Petrochemical refining" tab.
+  Bugfixes:
+    - Fixed that optional dependencies "factoryplanner" and "Squeak Through" were misspelled.
+    - Fixed that diesel generator wasn't properly hidden.
+    - Fixed that combat robots were still visible in GUIs.
+
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2020-12-28
+  Features:
+    - All offshore pumps can be placed anywhere on land.
+  Settings:
+    - Changed startup setting "Auto-barreling" from mod "Angel's Refining" default to "true".
+    - Changes startup setting "Vehicle: Spidertron remote" from mod "Shortcuts for 1.1" default to "Enabled (hide remote from inventory)".
+    - Hid startup settings regarding "Starting resources" from mod "Angel's Refining".
+  Dependencies:
     - New dependency: A Sea Block Config
     - Removed optional dependency: inland_pumps
+  Graphics:
+    - New icon for "Logistics" tab (medium power pole and storage chest).
+    - New icon for "Bob's logistics" tab (vanilla "Logistics" tab icon).
+    - New icon for "Bob's materials" tab (polished emerald).
+  Hidden:
+    - Items, recipes, entities and technologies got hidden where necessary. Redundant technology unlocks got removed.
+    - Hid burner and steam inserters.
+    - Hid accumulator.
+    - Hid armoured rolling stock.
+    - Hid burner and fluid burning heat sources.
+    - Hid ore silos (default and logistic variants are still available).
+    - Hid converter valve.
+    - Hid burner and big burner generators.
+    - Hid diesel generator and oil boiler.
+    - Hid all combat robots and their components.
+    - Hid pollution	modules from GUIs.
+    - Hid mining drills and pumpjacks from GUIs.
+  Reordered:
+    - Reordered "Logistics" tab.
+    - Moved car, tanks, spider vehicles and artillery wagons in "Combat" tab.
+    - Moved all pipes in "Barrelling and fluid control" tab.
+    - Reordered "Production" tab. (WIP)
+    - Moved repair packs in "Logistics" tab.
+    - Reordered "Modules" tab.
+    - Merged "Intermediate products" and "Bob's intermediates" tabs.
+    - Reordered "Intermediate products" tab.
+    - Moved diesel fuel in "Petrochemical refining" tab.
+    - Moved all Space extension stuff in "Production" tab.
+    - Moved all nuclear stuff in "Intermediate products" tab.
+    - Moved carbon dioxide from carbon recipe in "Petrochemical refining" tab.
+    - Reordered "Combat" tab. (WIP)
+    - Moved fiberglass board recipe in "Intermediate products" tab.
+    - Moved "Signals" tab at the end.
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2020-12-20
   Features:
     - Initial release. Forked from SeaBlockMetaPack_1.1.0
-  Changes:
     - Added changelog.txt
-    - Added README.md
-    - Added LICENSE.txt (MIT)
+    - Added LICENSE (MIT)
+  Dependencies:
     - Added minimal versions to all dependencies
     - Removed dependencies: Explosive Excavation and LandfillPainting
     - Made dependency optional: FNEI
-    - New optional dependencies: FactoryPlanner, flib, inland_pumps, ModuleInserter, reskins-angels, reskins-bobs, reskins-library, Shortcuts-ick and SqueakThrough
+    - New optional dependencies: factoryplanner, flib, inland_pumps, ModuleInserter, reskins-angels, reskins-bobs, reskins-library, Shortcuts-ick and Squeak Through

@@ -17,6 +17,7 @@ local function change_subgroup_group(subgroup_name, new_group)
 end
 
 change_order("item-group", "signals", "z")
+change_order("item-group", "angels-fluid-control", "aaa-b")
 
 -- LOGISTICS
 change_subgroup("item", "small-electric-pole", "storage")
@@ -73,17 +74,19 @@ change_order("item", "silo-storage", "a[silo]-n[storage]")
 change_order("item", "angels-warehouse-buffer", "a[warehouse]-i[buffer]")
 change_order("item", "angels-warehouse-storage", "a[warehouse]-n[storage]")
 
-change_subgroup("item", "artillery-turret", "artillery")
-change_subgroup("item", "bob-artillery-turret-2", "artillery")
-change_subgroup("item", "bob-artillery-turret-3", "artillery")
-
 change_subgroup_group("transport", "combat")
 
+change_subgroup("item-with-entity-data", "artillery-wagon", "artillery")
+change_subgroup("item-with-entity-data", "bob-artillery-wagon-2", "artillery")
+change_subgroup("item-with-entity-data", "bob-artillery-wagon-3", "artillery")
 
--- BOB-LOGISTICS
+
+-- BOB-LOGISTICS and ANGELS-FLUID-CONTROL
 change_subgroup_group("pipe", "angels-fluid-control")
 change_subgroup_group("pipe-to-ground", "angels-fluid-control")
 
+
+-- ANGELS-FLUID-CONTROL
 change_order("item-subgroup", "pipe", "a-a")
 change_order("item-subgroup", "pipe-to-ground", "a-b")
 
@@ -101,6 +104,12 @@ data:extend(
 		group = "angels-fluid-control",
 		order = "a-d",
 	},
+	{
+		type = "item-subgroup",
+		name = "barreling",
+		group = "angels-fluid-control",
+		order = "c",
+	},
 })
 
 change_subgroup("item", "titanium-pipe", "pipe-2")
@@ -114,6 +123,14 @@ change_subgroup("item", "ceramic-pipe-to-ground", "pipe-to-ground-2")
 change_subgroup("item", "tungsten-pipe-to-ground", "pipe-to-ground-2")
 change_subgroup("item", "nitinol-pipe-to-ground", "pipe-to-ground-2")
 change_subgroup("item", "copper-tungsten-pipe-to-ground", "pipe-to-ground-2")
+
+change_subgroup("item", "barreling-pump", "barreling")
+change_subgroup("item", "empty-barrel", "barreling")
+change_subgroup("recipe", "empty-barrel", "barreling")
+change_subgroup("item", "empty-canister", "barreling")
+change_subgroup("recipe", "empty-canister", "barreling")
+change_subgroup("item", "gas-canister", "barreling")
+change_subgroup("recipe", "gas-canister", "barreling")
 
 
 -- PRODUCTION
@@ -298,12 +315,74 @@ change_subgroup("recipe", "carbon-dioxide", "petrochem-basics")
 
 
 -- COMBAT
-change_subgroup("item-with-entity-data", "artillery-wagon", "artillery")
-change_subgroup("item-with-entity-data", "bob-artillery-wagon-2", "artillery")
-change_subgroup("item-with-entity-data", "bob-artillery-wagon-3", "artillery")
-
+change_subgroup("item", "artillery-turret", "artillery")
+change_subgroup("item", "bob-artillery-turret-2", "artillery")
+change_subgroup("item", "bob-artillery-turret-3", "artillery")
 change_subgroup("capsule", "artillery-targeting-remote", "artillery")
+
+-- RESOURCE-REFINING
+data:extend(
+{
+	{
+		type = "item-subgroup",
+		name = "thermal",
+		group = "water-treatment",
+		order = "z[building]-d",
+	},
+})
+
+change_subgroup("item", "thermal-bore", "thermal")
+change_subgroup("item", "thermal-extractor", "thermal")
 
 
 -- ANGELS-CASTING
 change_subgroup("recipe", "angels-glass-fiber-board", "bob-boards")
+change_order("recipe", "angels-glass-fiber-board", "c-a3[glass-fiber-board]")
+
+
+-- WATER-TREATMENT
+change_order("recipe", "solid-salt-from-saline", "d[solid-salt-from-saline]")
+
+change_order("item", "mud", "a[mud]-a")
+change_order("item", "solid-clay", "a[mud]-b")
+change_order("item", "solid-limestone", "a[mud]-c")
+change_order("item", "solid-sand", "a[mud]-d")
+change_order("item", "solid-salt", "b[salt]-a")
+change_order("item", "solid-lithium", "b[salt]-b")
+
+change_subgroup("recipe", "coolant-cool-steam", "water-boiling")
+change_order("recipe", "coolant-cool-steam", "b")
+
+change_order("item", "offshore-pump", "a")
+
+
+-- PETROCHEM-REFINING
+change_order("recipe", "sb-wood-bricks-charcoal", "c[charcoal]")
+change_order("item", "wood-charcoal", "c[charcoal]")
+
+data:extend(
+{
+	{
+		type = "item-subgroup",
+		name = "petrochem-rocket-fuel",
+		group = "petrochem-refining",
+		order = "ab",
+	},
+})
+
+change_order("recipe", "diesel-fuel", "h")
+change_order("fluid", "diesel-fuel", "a[solid-fuel]-c")
+
+change_subgroup("recipe", "rocket-oxidizer-capsule", "petrochem-rocket-fuel")
+change_subgroup("recipe", "rocket-fuel-capsule", "petrochem-rocket-fuel")
+change_subgroup("recipe", "rocket-fuel", "petrochem-rocket-fuel")
+change_subgroup("recipe", "rocket-booster-1", "petrochem-rocket-fuel")
+change_subgroup("recipe", "rocket-booster-2", "petrochem-rocket-fuel")
+change_subgroup("recipe", "nuclear-fuel", "petrochem-rocket-fuel")
+
+change_order("recipe", "carbon-dioxide", "da")
+change_order("recipe", "gas-carbon-dioxide-from-wood", "c")
+
+-- BIO-PROCESSING-NAUVIS
+change_subgroup("item", "wood-charcoal", "petrochem-coal")
+change_subgroup("recipe", "gas-carbon-dioxide-from-wood", "petrochem-basics")
