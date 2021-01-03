@@ -10,7 +10,33 @@ end
 
 local function set_hidden(name, type)
   if data.raw[type][name] then
-    data.raw[type][name].hidden = true
+    local hide_name = data.raw[type][name]
+    hide_name.hidden = true
+    if type == "technology" then
+      for _, tech in pairs(data.raw.technology) do
+        if tech.hidden ~= true and tech.prerequisites then
+          for i, dependency in pairs(tech.prerequisites) do
+            if dependency == name then
+              table.remove(tech.prerequisites, i)
+              if hide_name.prerequisites then
+                for _, prerequisite in pairs(hide_name.prerequisites) do
+                  ickputzdirwech = {}
+                  ickputzdirwech.insert = true
+                  for _, already_exists in pairs(tech.prerequisites) do
+                    if prerequisite == already_exists then
+                      ickputzdirwech.insert = false
+                    end
+                  end
+                  if ickputzdirwech.insert == true then
+                    table.insert(tech.prerequisites, prerequisite)
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
   end
 end
 
@@ -50,6 +76,34 @@ local function hide_stuff(name, item_type, entity_type, tech_name, effect_type)
 end
 
 
+-- HIDE MINING RECIPES
+data:extend({{
+		type = "resource-category",
+		name = "nothing"
+}})
+
+for _, drill in pairs(data.raw["mining-drill"]) do
+  drill.resource_categories = {"nothing"}
+end
+
+local function remove_ore(name)
+  if data.raw["resource"][name] then
+    data.raw["resource"][name] = nil
+  end
+end
+
+remove_ore("angels-ore1")
+remove_ore("angels-ore2")
+remove_ore("angels-ore3")
+remove_ore("angels-ore4")
+remove_ore("angels-ore5")
+remove_ore("angels-ore6")
+
+if data.raw["offshore-pump"]["ground-water-pump"] then
+  data.raw["offshore-pump"]["ground-water-pump"].fluid = "fluid-unknown"
+end
+
+
 -- LOGISTICS
 hide_stuff("bob-armoured-locomotive", "item-with-entity-data", "locomotive", "bob-armoured-railway")
 hide_stuff("bob-armoured-cargo-wagon", "item-with-entity-data", "cargo-wagon")
@@ -75,6 +129,15 @@ if settings.startup["ick-seablock-burner-inserter"].value == true then
 end
 
 
+-- ANGELS-FLUID-CONTROL
+hide_stuff("valve-converter", "item", nil, "angels-fluid-control", "unlock-recipe")
+
+hide_stuff("angels-storage-tank-3", "item", nil, "angels-fluid-control", "unlock-recipe")
+hide_stuff("angels-storage-tank-2", "item", nil, "angels-oil-processing", "unlock-recipe")
+hide_stuff("angels-storage-tank-1", "item", nil, "gas-processing", "unlock-recipe")
+hide_stuff("angels-pressure-tank-1", "item", nil, "pressure-tanks")
+
+
 -- PRODUCTION
 hide_stuff("burner-mining-drill", nil, "mining-drill")
 hide_stuff("electric-mining-drill", nil, "mining-drill")
@@ -98,6 +161,16 @@ hide_stuff("fluid-reactor", "item", "reactor", "fluid-reactor-1")
 hide_stuff("fluid-reactor-from-fluid-furnace")
 hide_stuff("fluid-reactor-2", "item", "reactor", "fluid-reactor-2")
 hide_stuff("fluid-reactor-3", "item", "reactor", "fluid-reactor-3")
+
+hide_stuff("stone-chemical-furnace", "item", "assembling-machine", "chemical-processing-1")
+hide_stuff("steel-chemical-furnace", "item", "assembling-machine", "steel-chemical-furnace")
+hide_stuff("electric-chemical-furnace", "item", "assembling-machine", "electric-chemical-furnace")
+
+hide_stuff("stone-mixing-furnace", "item", "assembling-machine", "alloy-processing", "unlock-recipe")
+hide_stuff("steel-mixing-furnace", "item", "assembling-machine", "steel-mixing-furnace")
+hide_stuff("electric-mixing-furnace", "item", "assembling-machine", "electric-mixing-furnace")
+
+hide_stuff("electrolyser", nil, "assembling-machine")
 
 
 -- MODULES
@@ -151,6 +224,11 @@ hide_stuff("bob-robot-laser-drone", "item", "unit", "bob-robot-laser-drones")
 hide_stuff("bob-robot-flamethrower-drone", "item", "unit", "bob-robot-flamethrower-drones")
 hide_stuff("bob-robot-plasma-drone", "item", "unit", "bob-robot-plasma-drones")
 
+hide_stuff("robot-drone-frame", "item", nil, "robotics", "remove-unlock")
+hide_stuff("robot-drone-frame-large", "item", nil, "robotics", "remove-unlock")
+
+hide_stuff("combat-robot-dispenser-equipment", "item")
+
 hide_stuff(nil, nil, nil, "follower-robot-count-1")
 hide_stuff(nil, nil, nil, "follower-robot-count-2")
 hide_stuff(nil, nil, nil, "follower-robot-count-3")
@@ -168,10 +246,6 @@ if settings.startup["ick-seablock-walls-and-gates"].value == true then
   hide_stuff("reinforced-wall", "item", nil, "reinforced-wall")
   hide_stuff("reinforced-gate", "item")
 end
-
-
--- ANGELS-FLUID-CONTROL
-hide_stuff("valve-converter", "item", nil, "angels-fluid-control", "unlock-recipe")
 
 
 -- WATER-TREATMENT

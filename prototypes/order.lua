@@ -16,8 +16,11 @@ local function change_subgroup_group(subgroup_name, new_group)
   end
 end
 
+
+-- ITEM-GROUPS
 change_order("item-group", "signals", "z")
 change_order("item-group", "angels-fluid-control", "aaa-b")
+
 
 -- LOGISTICS
 change_subgroup("item", "small-electric-pole", "storage")
@@ -80,6 +83,8 @@ change_subgroup("item-with-entity-data", "artillery-wagon", "artillery")
 change_subgroup("item-with-entity-data", "bob-artillery-wagon-2", "artillery")
 change_subgroup("item-with-entity-data", "bob-artillery-wagon-3", "artillery")
 
+change_order("item-subgroup", "tool", "i")
+
 
 -- BOB-LOGISTICS and ANGELS-FLUID-CONTROL
 change_subgroup_group("pipe", "angels-fluid-control")
@@ -135,8 +140,8 @@ change_subgroup("recipe", "gas-canister", "barreling")
 
 -- PRODUCTION
 change_subgroup("item", "wind-turbine-2", "bob-energy-fluid-generator")
+
 change_subgroup_group("tool", "logistics")
-change_order("item-subgroup", "tool", "i")
 
 data:extend(
 {
@@ -144,14 +149,8 @@ data:extend(
 		type = "item-subgroup",
 		name = "nuclear-power",
 		group = "production",
-		order = "b-a",
-	},
-	{
-		type = "item-subgroup",
-		name = "bob-smelting-machine-2",
-		group = "production",
-		order = "d-a",
-	},
+		order = "b-b1",
+	}
 })
 
 change_subgroup("item", "centrifuge", "nuclear-power")
@@ -166,11 +165,6 @@ change_subgroup("item", "heat-pipe-3", "nuclear-power")
 
 change_order("item", "centrifuge-2", "f[nuclear-energy]-a[centrifuge]")
 change_order("item", "centrifuge-3", "f[nuclear-energy]-a[centrifuge]")
-
-change_subgroup("item", "stone-mixing-furnace", "bob-smelting-machine-2")
-change_subgroup("item", "steel-mixing-furnace", "bob-smelting-machine-2")
-change_subgroup("item", "fluid-mixing-furnace", "bob-smelting-machine-2")
-change_subgroup("item", "electric-mixing-furnace", "bob-smelting-machine-2")
 
 
 -- MODULES
@@ -196,14 +190,34 @@ change_subgroup("item", "productivity-processor-3", "module-intermediates-2")
 
 
 -- INTERMEDIATE-PRODUCTS
-change_subgroup("recipe", "diesel-fuel", "petrochem-fuel")
-change_subgroup("fluid", "diesel-fuel", "petrochem-fuel")
-
-change_subgroup("item", "iron-gear-wheel", "bob-gears")
-change_order("item", "iron-gear-wheel", "a[iron-gear-wheel]")
+change_subgroup_group("bob-intermediates", "intermediate-products")
+change_subgroup_group("bob-electronic-components", "intermediate-products")
+change_subgroup_group("bob-boards", "intermediate-products")
+change_subgroup_group("bob-electronic-boards", "intermediate-products")
+change_subgroup_group("bob-gears", "intermediate-products")
+change_subgroup_group("bob-bearings", "intermediate-products")
+change_subgroup_group("bob-roboport-parts-antenna", "intermediate-products")
+change_subgroup_group("bob-roboport-parts-door", "intermediate-products")
+change_subgroup_group("bob-roboport-parts-charge", "intermediate-products")
+change_subgroup_group("bob-robot-parts", "intermediate-products")
 
 change_subgroup("item", "battery", "bob-intermediates")
 change_order("item", "battery", "e[battery]")
+
+change_subgroup("item", "basic-circuit-board", "bob-boards")
+change_subgroup("item", "circuit-board", "bob-boards")
+change_subgroup("item", "superior-circuit-board", "bob-boards")
+change_subgroup("item", "multi-layer-circuit-board", "bob-boards")
+
+change_subgroup("item", "electronic-circuit", "bob-electronic-boards")
+change_subgroup("item", "advanced-circuit", "bob-electronic-boards")
+change_subgroup("item", "processing-unit", "bob-electronic-boards")
+change_subgroup("item", "advanced-processing-unit", "bob-electronic-boards")
+
+change_order("item-subgroup", "intermediate-product", "e-c2")
+
+change_subgroup("item", "iron-gear-wheel", "bob-gears")
+change_order("item", "iron-gear-wheel", "a[iron-gear-wheel]")
 
 data:extend(
 {
@@ -232,28 +246,6 @@ data:extend(
 		order = "e-e3",
 	},
 })
-change_subgroup("item", "plutonium-fuel-cell", "fuel-cells")
-change_subgroup("item", "uranium-fuel-cell", "fuel-cells")
-change_subgroup("item", "used-up-uranium-fuel-cell", "fuel-cells")
-change_subgroup("item", "thorium-fuel-cell", "fuel-cells")
-change_subgroup("item", "thorium-plutonium-fuel-cell", "fuel-cells")
-change_subgroup("item", "used-up-thorium-fuel-cell", "fuel-cells")
-change_subgroup("item", "deuterium-fuel-cell", "fuel-cells")
-change_subgroup("item", "deuterium-fuel-cell-2", "fuel-cells")
-change_subgroup("item", "used-up-deuterium-fuel-cell", "fuel-cells")
-
-change_subgroup("item", "uranium-235", "radioactive-materials")
-change_subgroup("item", "uranium-238", "radioactive-materials")
-change_subgroup("item", "plutonium-239", "radioactive-materials")
-change_subgroup("item", "thorium-232", "radioactive-materials")
-change_subgroup("item", "fusion-catalyst", "radioactive-materials")
-
-change_subgroup("recipe", "nuclear-fuel-reprocessing", "radioactive-materials")
-change_subgroup("recipe", "kovarex-enrichment-process", "radioactive-materials")
-change_subgroup("recipe", "bobingabout-enrichment-process", "radioactive-materials")
-change_subgroup("recipe", "plutonium-nucleosynthesis", "radioactive-materials")
-change_subgroup("recipe", "thorium-fuel-reprocessing", "radioactive-materials")
-change_subgroup("recipe", "deuterium-fuel-reprocessing", "radioactive-materials")
 
 change_subgroup("item", "robot-brain-construction", "bob-robot-parts-2")
 change_subgroup("item", "robot-brain-construction-2", "bob-robot-parts-2")
@@ -272,6 +264,44 @@ change_subgroup("item", "robot-tool-logistic-2", "bob-robot-parts-3")
 change_subgroup("item", "robot-tool-logistic-3", "bob-robot-parts-3")
 change_subgroup("item", "robot-tool-logistic-4", "bob-robot-parts-3")
 
+change_subgroup("item", "uranium-fuel-cell", "fuel-cells")
+change_subgroup("item", "plutonium-fuel-cell", "fuel-cells")
+change_subgroup("item", "used-up-uranium-fuel-cell", "fuel-cells")
+change_subgroup("item", "thorium-fuel-cell", "fuel-cells")
+change_subgroup("item", "thorium-plutonium-fuel-cell", "fuel-cells")
+change_subgroup("item", "used-up-thorium-fuel-cell", "fuel-cells")
+change_subgroup("item", "deuterium-fuel-cell", "fuel-cells")
+change_subgroup("item", "deuterium-fuel-cell-2", "fuel-cells")
+change_subgroup("item", "used-up-deuterium-fuel-cell", "fuel-cells")
+
+change_order("item", "plutonium-fuel-cell", "r[uranium-processing]-b[plutonium-fuel-cell]")
+
+change_subgroup("item", "uranium-238", "radioactive-materials")
+change_subgroup("item", "uranium-235", "radioactive-materials")
+change_subgroup("item", "thorium-232", "radioactive-materials")
+change_subgroup("item", "plutonium-239", "radioactive-materials")
+change_subgroup("item", "fusion-catalyst", "radioactive-materials")
+
+change_order("item", "uranium-238", "a[uranium-238]")
+change_order("item", "uranium-235", "b[uranium-235]")
+change_order("item", "thorium-232", "c[thorium-232]")
+change_order("item", "plutonium-239", "d[plutonium-239]")
+change_order("item", "fusion-catalyst", "e[fusion-catalyst]")
+
+change_subgroup("recipe", "uranium-processing", "radioactive-materials")
+change_subgroup("recipe", "thorium-processing", "radioactive-materials")
+change_subgroup("recipe", "nuclear-fuel-reprocessing", "radioactive-materials")
+change_subgroup("recipe", "kovarex-enrichment-process", "radioactive-materials")
+change_subgroup("recipe", "bobingabout-enrichment-process", "radioactive-materials")
+change_subgroup("recipe", "plutonium-nucleosynthesis", "radioactive-materials")
+change_subgroup("recipe", "thorium-fuel-reprocessing", "radioactive-materials")
+change_subgroup("recipe", "deuterium-fuel-reprocessing", "radioactive-materials")
+
+change_order("recipe", "nuclear-fuel-reprocessing", "s[plutonium-processing]-e[nuclear-fuel-reprocessing]")
+
+change_subgroup("recipe", "diesel-fuel", "petrochem-fuel")
+change_subgroup("fluid", "diesel-fuel", "petrochem-fuel")
+
 change_subgroup("item", "assembly-robot", "space-related")
 change_subgroup("item", "drydock-assembly", "space-related")
 change_subgroup("item", "drydock-structural", "space-related")
@@ -286,39 +316,64 @@ change_subgroup("item", "command", "space-related")
 change_subgroup("item", "astrometrics", "space-related")
 change_subgroup("item", "ftl-drive", "space-related")
 
-change_subgroup_group("bob-intermediates", "intermediate-products")
-change_subgroup_group("bob-electronic-components", "intermediate-products")
-change_subgroup_group("bob-boards", "intermediate-products")
-change_subgroup_group("bob-electronic-boards", "intermediate-products")
-change_subgroup_group("bob-gears", "intermediate-products")
-change_subgroup_group("bob-bearings", "intermediate-products")
-change_subgroup_group("bob-roboport-parts-antenna", "intermediate-products")
-change_subgroup_group("bob-roboport-parts-door", "intermediate-products")
-change_subgroup_group("bob-roboport-parts-charge", "intermediate-products")
-change_subgroup_group("bob-robot-parts", "intermediate-products")
-
-change_subgroup("item", "basic-circuit-board", "bob-boards")
-change_subgroup("item", "circuit-board", "bob-boards")
-change_subgroup("item", "superior-circuit-board", "bob-boards")
-change_subgroup("item", "multy-layer-circuit-board", "bob-boards")
-
-change_subgroup("item", "electronic-circuit", "bob-electronic-boards")
-change_subgroup("item", "advanced-circuit", "bob-electronic-boards")
-change_subgroup("item", "processing-unit", "bob-electronic-boards")
-change_subgroup("item", "advanced-processing-unit", "bob-electronic-boards")
-
-change_order("item-subgroup", "intermediate-product", "e-c2")
-
 
 -- BOB-RESOURCE-PRODUCTS
 change_subgroup("recipe", "carbon-dioxide", "petrochem-basics")
 
 
 -- COMBAT
+data:extend(
+{
+	{
+		type = "item-subgroup",
+		name = "battery-equipment",
+		group = "combat",
+		order = "e[equipment]-a[battery]",
+	},
+	{
+		type = "item-subgroup",
+		name = "robot-equipment-1",
+		group = "combat",
+		order = "e[equipment]-b[robot-1]",
+	},
+	{
+		type = "item-subgroup",
+		name = "robot-equipment-2",
+		group = "combat",
+		order = "e[equipment]-c[robot-2]",
+	},
+})
+
+change_subgroup("item", "battery-equipment", "battery-equipment")
+change_subgroup("item", "battery-mk2-equipment", "battery-equipment")
+change_subgroup("item", "battery-mk3-equipment", "battery-equipment")
+change_subgroup("item", "battery-mk4-equipment", "battery-equipment")
+change_subgroup("item", "battery-mk5-equipment", "battery-equipment")
+change_subgroup("item", "battery-mk6-equipment", "battery-equipment")
+
+change_subgroup("item", "personal-roboport-antenna-equipment", "robot-equipment-1")
+change_subgroup("item", "personal-roboport-antenna-equipment-2", "robot-equipment-1")
+change_subgroup("item", "personal-roboport-antenna-equipment-3", "robot-equipment-1")
+change_subgroup("item", "personal-roboport-antenna-equipment-4", "robot-equipment-1")
+change_subgroup("item", "personal-roboport-chargepad-equipment", "robot-equipment-1")
+change_subgroup("item", "personal-roboport-chargepad-equipment-2", "robot-equipment-1")
+change_subgroup("item", "personal-roboport-chargepad-equipment-3", "robot-equipment-1")
+change_subgroup("item", "personal-roboport-chargepad-equipment-4", "robot-equipment-1")
+
+change_subgroup("item", "personal-roboport-robot-equipment", "robot-equipment-2")
+change_subgroup("item", "personal-roboport-robot-equipment-2", "robot-equipment-2")
+change_subgroup("item", "personal-roboport-robot-equipment-3", "robot-equipment-2")
+change_subgroup("item", "personal-roboport-robot-equipment-4", "robot-equipment-2")
+change_subgroup("item", "personal-roboport-equipment", "robot-equipment-2")
+change_subgroup("item", "personal-roboport-mk2-equipment", "robot-equipment-2")
+change_subgroup("item", "personal-roboport-mk3-equipment", "robot-equipment-2")
+change_subgroup("item", "personal-roboport-mk4-equipment", "robot-equipment-2")
+
 change_subgroup("item", "artillery-turret", "artillery")
 change_subgroup("item", "bob-artillery-turret-2", "artillery")
 change_subgroup("item", "bob-artillery-turret-3", "artillery")
 change_subgroup("capsule", "artillery-targeting-remote", "artillery")
+
 
 -- RESOURCE-REFINING
 data:extend(
@@ -328,7 +383,7 @@ data:extend(
 		name = "thermal",
 		group = "water-treatment",
 		order = "z[building]-d",
-	},
+	}
 })
 
 change_subgroup("item", "thermal-bore", "thermal")

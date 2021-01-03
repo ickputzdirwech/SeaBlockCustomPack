@@ -1,3 +1,4 @@
+-- ITEM-GROUP
 if data.raw["item-group"]["logistics"] then
   data.raw["item-group"]["logistics"].icon = nil
   data.raw["item-group"]["logistics"].icon_size = nil
@@ -15,7 +16,7 @@ if data.raw["item-group"]["logistics"] then
       icon_mipmaps = 4,
       scale = 0.5,
       shift = {16, 16}
-    },
+    }
   }
 end
 
@@ -31,6 +32,16 @@ if data.raw["item-group"]["bob-resource-products"] then
   data.raw["item-group"]["bob-resource-products"].icon_mipmaps = 1
 end
 
+
+-- ITEM
+if data.raw.item["spacex-combinator"] then
+  data.raw.item["spacex-combinator"].icon = "__SeaBlockCustomPack__/graphics/spacex-combinator.png"
+  data.raw.item["spacex-combinator"].icon_size = 64
+  data.raw.item["spacex-combinator"].icon_mipmaps = 4
+end
+
+
+-- RECIPE
 if data.raw.recipe["gas-carbon-dioxide-from-wood"] and data.raw.recipe["carbon-separation-2"] and data.raw.recipe["carbon-dioxide"] then
   data.raw.recipe["gas-carbon-dioxide-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
     {{"__angelspetrochem__/graphics/icons/molecules/carbon-dioxide.png", 72}},

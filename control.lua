@@ -4,7 +4,7 @@ local function initialize()
     local recipe = force.recipes
     local function fix_tech_unlocks(name, tech_name)
       if recipe[name] and tech[tech_name] then
-        recipe[name].enabled = false
+        recipe[name].enabled = tech[tech_name].researched
       end
     end
 

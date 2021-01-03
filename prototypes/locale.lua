@@ -7,6 +7,7 @@ end
 change_name("coolant-used-filtration-1")
 change_name("coolant-used-filtration-2")
 
+change_name("gas-carbon-dioxide-from-wood")
 change_name("carbon-separation-2")
 change_name("carbon-dioxide")
 

@@ -30,7 +30,7 @@ add_recipe_unlock("alien-artifact-from-small", "bio-processing-alien-3")
 add_recipe_unlock("angelsore5-crushed", "slag-processing-1")
 add_recipe_unlock("angelsore6-crushed", "slag-processing-1")
 
--- The following eight recipes need a migration. Unfortunately this can't be done during the migrtion phase, because some other mods mess with it in control.lua script.on_configuration_changed(). This means I have to do it there as well which has the side effect, that it doesn't work if the configuration didn't change.
+-- The following eight recipes need a migration. Unfortunately this can't be done during the migration phase, because some other mods mess with it in control.lua script.on_configuration_changed(). This means I have to do it there as well which has the side effect, that it doesn't work if the configuration didn't change.
 add_recipe_unlock("angelsore5-crushed-smelting", "slag-processing-1")
 add_recipe_unlock("angelsore6-crushed-smelting", "slag-processing-1")
 
@@ -51,3 +51,13 @@ end
 
 add_dependency("slag-processing-1", "angels-lead-smelting-1")
 add_dependency("slag-processing-1", "angels-tin-smelting-1")
+
+
+local function new_dependencies(child_tech, mother_tech)
+  if data.raw.technology[child_tech] and data.raw.technology[mother_tech] then
+    data.raw.technology[mother_tech].prerequisites = {child_tech}
+  end
+end
+
+new_dependencies("ore-silos", "angels-warehouses")
+new_dependencies("logistic-silos", "angels-logistic-warehouses")

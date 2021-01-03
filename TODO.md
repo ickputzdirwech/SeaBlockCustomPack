@@ -8,16 +8,19 @@
 * Research queue on
 *
 
-# Hide recipes and items
+# FEATURES
+
+* Small tank size
+* Steam turbine and heat exchanger temperature
+*
+
+# HIDE
 
 * Military tab
 *
 
 # ORDER
 
-* Alt. furnace recipes
-* Alt. boiler recipes
-* Production tab
 * Military tab
 * Petrochemical refining tab
 *
@@ -25,6 +28,7 @@
 # ICONS
 
 * Adjustable inserter GUI
+* Artisanal reskin tier labels (small storage tanks, armor, spidertrons)
 * sb-water-mineralized-crystallization recipe
 * enriched fuel block recipe
 * rocket booster
@@ -33,11 +37,9 @@
 * sodium hydroxide solution
 *
 
-# Upgrade recipes
+# UPGRADE RECIPES
 
-* Logistic chests, silos and warehouses
-* Red and green wire in combinators
-* Angel's Storage tanks
+* Guns
 *
 
 # RENAME
@@ -46,10 +48,14 @@
 
 # TECHNOLOGY DEPENDENCIES
 
-* Silos and warehouses
+* Alloy processing
 *
 
 # ISSUES I DON'T WANT TO DEAL WITH
 
 * Carbon dioxide from charcoal vs carbon ?
+*
+
+# ISSUES I CAN'T SOLVE
+
 *

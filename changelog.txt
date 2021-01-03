@@ -1,4 +1,43 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+Date: 2021-01-03
+  Settings:
+    - Changed startup setting "Enable pressure fluid tanks" from mod "Angel's Addons - Storage Options" default to "false" and hid it (does nothing).
+    - Changed startup settings "Always show assembling machines" and "Always show products" from "Bob & Angel RAWs Patch" default to "false".
+    - Changed startup setting "Multi-purpose furnaces" from "Bob's Assembling machines mod" default to "false" and hid it.
+    - Changed startup setting "Fluid burning furnaces" from "Bob's Assembling machines mod" default to "false".
+    - Changed startup settings "Fluid wagon base size" and "Storage tank base size" from "Bob's logistics mod" default to "50".
+    - Changed startup settings "Add conversion recipes" from "Bob's Metals, Chemicals and Intermediates mod" default to "false" and hid it.
+    - Hid startup settings "Enable water ores" and "infinite ores" from "Bob's Ores mod" (do nothing).
+    - Changed startup setting "Burner and fluid powered heat sources" from mod "Bob's Power mod" default to "false" and hid it (does nothing).
+    - Hid startup setting "Burner power phase" from "Bob's Technology mod" (messes everything up).
+    - Hid startup setting "Science pack colors update" from "Bob's Technology mod" (does nothing).
+  Recipes:
+    - Warehouses require silos.
+    - Steel and electric furnaces require stone and steel furnaces.
+    - Reduces steel count for heavy armor recipe to account for light armor.
+    - Moved recipes for bob's chemical and metal mixing furnaces to either angel's chemical furnace or sintering oven.
+  Technologies:
+    - Warehouses and logistic warehouses are dependent on silos and logistic silos.
+  Graphics:
+    - Improved SpaceX Combinator icon.
+  Hidden:
+    - Hid storage tanks from angels.
+    - Hid bob's chemical and metal mixing furnaces.
+    - Hid bob's electrolyser from GUIs.
+    - Hid mining recipes from GUIs (had to remove all resource entities).
+    - Hid some more combat robots related stuff.
+  Locale:
+    - Renamed third carbon dioxide recipe to "Carbon dioxide from wood pellets".
+  Order:
+    - Reordered some more things in "Production" tab.
+    - Reordered some more things in "Intermediate products" tab.
+    - Reordered some more things in "Combat" tab. (WIP)
+  Bugfixes:
+    - Fixed that recipes with new technology to unlock were not unlocked if the technology was researched already.
+    - Fixed that hiding technologies could result in unresearchable technologies.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.2
 Date: 2021-01-01
   Changes:
@@ -22,8 +61,7 @@ Date: 2021-01-01
     - Rubite and bobmonium ore crushing and lead and tin plate are unlocked by slag processing 1.
     - Glass, copper, iron, lead and tin plate from ores are unlocked by mechanical refining.
     - Silver plate is unlocked by hydro-refining.
-    - Advanced lead smelting is now dependent on slag processing 1.
-    - Advanced tin smelting is now dependent on slag processing 1.
+    - Advanced lead and tin smelting are dependent on slag processing 1.
   Graphics:
     - Changed diesel fuel recipe icon to the diesel fuel fluid icon.
     - Added roman numerals to the icons of the three carbon dioxide recipes.
