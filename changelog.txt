@@ -1,4 +1,57 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.5
+Date: 2021-01-10
+  Features:
+    - Increased small storage tank and small inline storage tank size from 2.5k to 5k.
+  Changes:
+    - Removed things that were implemented in to the Sea Block mod version 0.5.2.
+  Settings:
+    - Changed startup setting "Equipment: Personal laser defense" from mod "Shortcuts for 1.1" default to "false" and hid it.
+    - Changed startup setting "Equipment: Discharge defense remote" from mod "Shortcuts for 1.1" default to "false" and hid it.
+    - For these changes to take effect you have to reset your mod settings via the red "reset X options to default" button in the top right corner of the mod settings menu.
+  Dependencies:
+    - Updated mod versions.
+  Recipes:
+    - Combinators require red and green wire.
+    - Cliff explosives require the ingredients of a grenade instead of the grenade itself.
+    - Guns require their previous tier.
+    - Reset uranium rounds magazine recipe to the vanilla ingredients.
+  Graphics:
+    - Fixed lab 2 entity icon.
+    - Added roman numerals to the two rocket booster recipes.
+  Locale:
+    - Added descriptions for all empty and filled barrels, canisters and bottles.
+  Hidden:
+    - Hid discharge defense equipment and remote.
+    - Hid flamethrower, flamethrower turret and ammo.
+    - Hid laser rifle and ammo.
+    - Hid grenades and capsules.
+    - Hid special bullets and magazines.
+    - Hid special shotgun shells.
+    - Hid scatter cannon shell.
+    - Hid special rockets.
+    - Hid special artillery shells.
+    - Hid gunmetal.
+    - Hid alien alloys and fluids.
+    - Hid iron rod and iron rod stack from GUIs.
+  Order:
+    - Moved uranium and thorium ore into intermediate products tabs.
+    - Reordered some more things in "Combat" tab.
+    - Reordered "Resource refining" tab.
+    - Moved glowing hot iron plate in "Metallurgy casting" tab.
+  Bugfixes:
+    - Fixed that barrels of hidden fluids weren't hidden.
+    - Fixed that recipes with difficulty weren't hidden properly.
+    - Fixed that recipe changes weren't applied to recipes with normal difficulty. Expensive difficulty is not supported.
+    - Fixed broken links in README.md
+
+---------------------------------------------------------------------------------------------------
+Version: 1.1.4
+Date: 2021-01-03
+  Bugfixes:
+    - Attempt to fix an issue in multiplayer (this mod wasn't the issue, so changes were reverted in version 1.1.5).
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.3
 Date: 2021-01-03
   Settings:
@@ -21,14 +74,14 @@ Date: 2021-01-03
     - Warehouses and logistic warehouses are dependent on silos and logistic silos.
   Graphics:
     - Improved SpaceX Combinator icon.
+  Locale:
+    - Renamed third carbon dioxide recipe to "Carbon dioxide from wood pellets".
   Hidden:
     - Hid storage tanks from angels.
     - Hid bob's chemical and metal mixing furnaces.
     - Hid bob's electrolyser from GUIs.
     - Hid mining recipes from GUIs (had to remove all resource entities).
     - Hid some more combat robots related stuff.
-  Locale:
-    - Renamed third carbon dioxide recipe to "Carbon dioxide from wood pellets".
   Order:
     - Reordered some more things in "Production" tab.
     - Reordered some more things in "Intermediate products" tab.
@@ -64,7 +117,7 @@ Date: 2021-01-01
     - Advanced lead and tin smelting are dependent on slag processing 1.
   Graphics:
     - Changed diesel fuel recipe icon to the diesel fuel fluid icon.
-    - Added roman numerals to the icons of the three carbon dioxide recipes.
+    - Added roman numerals to the two carbon dioxide recipes.
     - New icons for thermal water recipes.
     - Changed clean ceramic filter recipe icon to spent ceramic filter icon.
   Locale:
@@ -119,7 +172,7 @@ Date: 2020-12-28
     - Hid all combat robots and their components.
     - Hid pollution	modules from GUIs.
     - Hid mining drills and pumpjacks from GUIs.
-  Reordered:
+  Order:
     - Reordered "Logistics" tab.
     - Moved car, tanks, spider vehicles and artillery wagons in "Combat" tab.
     - Moved all pipes in "Barrelling and fluid control" tab.

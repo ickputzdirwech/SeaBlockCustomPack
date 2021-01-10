@@ -42,7 +42,40 @@ end
 
 
 -- RECIPE
-if data.raw.recipe["gas-carbon-dioxide-from-wood"] and data.raw.recipe["carbon-separation-2"] and data.raw.recipe["carbon-dioxide"] then
+if data.raw.recipe["diesel-fuel"] then
+  data.raw.recipe["diesel-fuel"].icon = "__KS_Power_quickfix__/graphics/diesel-fuel.png"
+end
+
+if data.raw.item["rocket-booster"] and data.raw.recipe["rocket-booster-1"] and data.raw.recipe["rocket-booster-2"] then
+  data.raw.recipe["rocket-booster-1"].icons = {
+    {
+      icon = "__angelspetrochem__/graphics/icons/rocket-booster.png",
+      icon_size = 32
+    },
+    {
+      icon = "__angelsrefining__/graphics/icons/num_1.png",
+      tint = angelsmods.petrochem.number_tint,
+      icon_size = 32,
+      scale = 0.32,
+      shift = {-12, -12}
+    }
+  }
+  data.raw.recipe["rocket-booster-2"].icons = {
+    {
+      icon = "__angelspetrochem__/graphics/icons/rocket-booster.png",
+      icon_size = 32
+    },
+    {
+      icon = "__angelsrefining__/graphics/icons/num_2.png",
+      tint = angelsmods.petrochem.number_tint,
+      icon_size = 32,
+      scale = 0.32,
+      shift = {-12, -12}
+    }
+  }
+end
+
+if data.raw.recipe["gas-carbon-dioxide-from-wood"] and data.raw.recipe["carbon-separation-2"] then
   data.raw.recipe["gas-carbon-dioxide-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
     {{"__angelspetrochem__/graphics/icons/molecules/carbon-dioxide.png", 72}},
     "ccc",
@@ -61,19 +94,6 @@ if data.raw.recipe["gas-carbon-dioxide-from-wood"] and data.raw.recipe["carbon-s
      tint = angelsmods.petrochem.number_tint
     }}}
   )
-  data.raw.recipe["carbon-dioxide"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {{"__angelspetrochem__/graphics/icons/molecules/carbon-dioxide.png", 72}},
-    "ccc",
-    {{{
-      icon = "__angelsrefining__/graphics/icons/num_3.png",
-      icon_size = 32,
-      tint = angelsmods.petrochem.number_tint
-    }}}
-  )
-end
-
-if data.raw.recipe["diesel-fuel"] then
-  data.raw.recipe["diesel-fuel"].icon = "__KS_Power_quickfix__/graphics/diesel-fuel.png"
 end
 
 if data.raw.recipe["thermal-bore-water"] and data.raw.recipe["thermal-extractor-water"] then
@@ -126,4 +146,11 @@ end
 
 if data.raw.recipe["filter-ceramic-refurbish"] then
   data.raw.recipe["filter-ceramic-refurbish"].icon = "__angelsrefining__/graphics/icons/filter-ceramic-used.png"
+end
+
+
+-- ENTITY
+if data.raw.lab["lab-2"] and data.raw.item["lab-2"] then
+  data.raw.lab["lab-2"].icon = nil
+  data.raw.lab["lab-2"].icons = data.raw.item["lab-2"].icons
 end

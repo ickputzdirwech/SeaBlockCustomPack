@@ -51,7 +51,7 @@ data:extend(
 		type = "item-subgroup",
 		name = "artillery",
 		group = "combat",
-		order = "h",
+		order = "i",
 	},
 })
 
@@ -204,6 +204,8 @@ change_subgroup_group("bob-robot-parts", "intermediate-products")
 change_subgroup("item", "battery", "bob-intermediates")
 change_order("item", "battery", "e[battery]")
 
+change_order("recipe", "angels-glass-fiber-board", "c-a3[glass-fiber-board]")
+
 change_subgroup("item", "basic-circuit-board", "bob-boards")
 change_subgroup("item", "circuit-board", "bob-boards")
 change_subgroup("item", "superior-circuit-board", "bob-boards")
@@ -282,11 +284,11 @@ change_subgroup("item", "thorium-232", "radioactive-materials")
 change_subgroup("item", "plutonium-239", "radioactive-materials")
 change_subgroup("item", "fusion-catalyst", "radioactive-materials")
 
-change_order("item", "uranium-238", "a[uranium-238]")
-change_order("item", "uranium-235", "b[uranium-235]")
-change_order("item", "thorium-232", "c[thorium-232]")
-change_order("item", "plutonium-239", "d[plutonium-239]")
-change_order("item", "fusion-catalyst", "e[fusion-catalyst]")
+change_order("item", "uranium-238", "j[uranium-238]")
+change_order("item", "uranium-235", "k[uranium-235]")
+change_order("item", "thorium-232", "l[thorium-232]")
+change_order("item", "plutonium-239", "m[plutonium-239]")
+change_order("item", "fusion-catalyst", "n[fusion-catalyst]")
 
 change_subgroup("recipe", "uranium-processing", "radioactive-materials")
 change_subgroup("recipe", "thorium-processing", "radioactive-materials")
@@ -324,25 +326,56 @@ change_subgroup("recipe", "carbon-dioxide", "petrochem-basics")
 -- COMBAT
 data:extend(
 {
+  {
+    type = "item-subgroup",
+    name = "equipment-2",
+    group = "combat",
+    order = "e[equipment]-a[equipment-2]",
+  },
 	{
 		type = "item-subgroup",
 		name = "battery-equipment",
 		group = "combat",
-		order = "e[equipment]-a[battery]",
+		order = "e[equipment]-b[battery]",
 	},
 	{
 		type = "item-subgroup",
 		name = "robot-equipment-1",
 		group = "combat",
-		order = "e[equipment]-b[robot-1]",
+		order = "e[equipment]-d[robot-1]",
 	},
 	{
 		type = "item-subgroup",
 		name = "robot-equipment-2",
 		group = "combat",
-		order = "e[equipment]-c[robot-2]",
+		order = "e[equipment]-e[robot-2]",
+	},
+	{
+		type = "item-subgroup",
+		name = "laser-turrets",
+		group = "combat",
+		order = "h",
+	},
+	{
+		type = "item-subgroup",
+		name = "radars",
+		group = "combat",
+		order = "j",
 	},
 })
+
+change_subgroup("ammo", "cannon-shell", "bob-ammo")
+change_subgroup("ammo", "explosive-cannon-shell", "bob-ammo")
+change_subgroup("ammo", "uranium-cannon-shell", "bob-ammo")
+change_subgroup("ammo", "explosive-uranium-cannon-shell", "bob-ammo")
+change_subgroup("ammo", "artillery-shell", "bob-ammo")
+
+change_subgroup("item", "exoskeleton-equipment", "equipment-2")
+change_subgroup("item", "exoskeleton-equipment-2", "equipment-2")
+change_subgroup("item", "exoskeleton-equipment-3", "equipment-2")
+change_subgroup("item", "night-vision-equipment", "equipment-2")
+change_subgroup("item", "night-vision-equipment-2", "equipment-2")
+change_subgroup("item", "night-vision-equipment-3", "equipment-2")
 
 change_subgroup("item", "battery-equipment", "battery-equipment")
 change_subgroup("item", "battery-mk2-equipment", "battery-equipment")
@@ -350,6 +383,12 @@ change_subgroup("item", "battery-mk3-equipment", "battery-equipment")
 change_subgroup("item", "battery-mk4-equipment", "battery-equipment")
 change_subgroup("item", "battery-mk5-equipment", "battery-equipment")
 change_subgroup("item", "battery-mk6-equipment", "battery-equipment")
+
+change_subgroup("item", "energy-shield-mk3-equipment", "military-equipment")
+change_subgroup("item", "energy-shield-mk4-equipment", "military-equipment")
+change_subgroup("item", "energy-shield-mk5-equipment", "military-equipment")
+change_subgroup("item", "energy-shield-mk6-equipment", "military-equipment")
+change_order("item-subgroup", "military-equipment", "e[equipment]-c[military-equipment]")
 
 change_subgroup("item", "personal-roboport-antenna-equipment", "robot-equipment-1")
 change_subgroup("item", "personal-roboport-antenna-equipment-2", "robot-equipment-1")
@@ -369,11 +408,34 @@ change_subgroup("item", "personal-roboport-mk2-equipment", "robot-equipment-2")
 change_subgroup("item", "personal-roboport-mk3-equipment", "robot-equipment-2")
 change_subgroup("item", "personal-roboport-mk4-equipment", "robot-equipment-2")
 
+change_order("item-with-entity-data", "spidertron", "b[personal-transport]-c[spidertron]-d[spidertron]")
+change_order("spidertron-remote", "spidertron-remote", "c[spidertron-remote]")
+
+change_subgroup("item", "laser-turret", "laser-turrets")
+change_subgroup("item", "bob-laser-turret-2", "laser-turrets")
+change_subgroup("item", "bob-laser-turret-3", "laser-turrets")
+change_subgroup("item", "bob-laser-turret-4", "laser-turrets")
+change_subgroup("item", "bob-laser-turret-5", "laser-turrets")
+change_subgroup("item", "bob-plasma-turret-1", "laser-turrets")
+change_subgroup("item", "bob-plasma-turret-2", "laser-turrets")
+change_subgroup("item", "bob-plasma-turret-3", "laser-turrets")
+change_subgroup("item", "bob-plasma-turret-4", "laser-turrets")
+change_subgroup("item", "bob-plasma-turret-5", "laser-turrets")
+
 change_subgroup("item", "artillery-turret", "artillery")
 change_subgroup("item", "bob-artillery-turret-2", "artillery")
 change_subgroup("item", "bob-artillery-turret-3", "artillery")
 change_subgroup("capsule", "artillery-targeting-remote", "artillery")
 
+change_order("item", "artillery-turret", "a[artillery]-a[turret-1]")
+change_order("item", "bob-artillery-turret-2", "a[artillery]-b[turret-2]")
+change_order("item", "bob-artillery-turret-3", "a[artillery]-c[turret-3]")
+
+change_subgroup("item", "radar", "radars")
+change_subgroup("item", "radar-2", "radars")
+change_subgroup("item", "radar-3", "radars")
+change_subgroup("item", "radar-4", "radars")
+change_subgroup("item", "radar-5", "radars")
 
 -- RESOURCE-REFINING
 data:extend(
@@ -389,10 +451,25 @@ data:extend(
 change_subgroup("item", "thermal-bore", "thermal")
 change_subgroup("item", "thermal-extractor", "thermal")
 
+change_order("item-subgroup", "angels-ores", "b[angels-ore]")
+
+change_subgroup("item", "uranium-ore", "radioactive-materials")
+change_subgroup("item", "thorium-ore", "radioactive-materials")
+
+change_subgroup("item", "catalysator-brown", "geode-crystallization")
+change_subgroup("item", "catalysator-green", "geode-crystallization")
+change_subgroup("item", "catalysator-orange", "geode-crystallization")
+change_subgroup("item", "filter-frame", "geode-crystallization")
+change_subgroup("item", "filter-charcoal", "geode-crystallization")
+change_subgroup("item", "filter-ceramic", "geode-crystallization")
+change_subgroup("item", "filter-ceramic-used", "geode-crystallization")
+
+
+-- ANGELS-SMELTING
+change_subgroup("item", "angels-plate-hot-iron", "angels-steel-casting")
 
 -- ANGELS-CASTING
 change_subgroup("recipe", "angels-glass-fiber-board", "bob-boards")
-change_order("recipe", "angels-glass-fiber-board", "c-a3[glass-fiber-board]")
 
 
 -- WATER-TREATMENT

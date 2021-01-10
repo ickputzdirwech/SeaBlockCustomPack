@@ -1,61 +1,77 @@
-# Startup Settings
+# GENERAL
+
+* Forum post ?
+* Pull requests for Sea Block ?
+* More pictures on mod portal
+* Picture on GitHub
+*
+
+# DEPENDENCIES
+
+* Recipe book instead of FNEI ?
+*
+
+# SETTINGS
 
 *
 
-# Map generation settings
+# MAP GENERATION
 
 * Cliffs of ?
-* Research queue on
 *
 
 # FEATURES
 
-* Small tank size
-* Steam turbine and heat exchanger temperature
 *
 
-# HIDE
+# RECIPES
 
-* Military tab
+* Concrete ?
 *
 
-# ORDER
+# TECHNOLOGIES
 
-* Military tab
-* Petrochemical refining tab
+* Remove alien science ?
 *
 
 # ICONS
 
-* Adjustable inserter GUI
-* Artisanal reskin tier labels (small storage tanks, armor, spidertrons)
+* Electronic circuit vs. electronic circuit board
 * sb-water-mineralized-crystallization recipe
 * enriched fuel block recipe
-* rocket booster
 * sodium
 * sodium hydroxide
 * sodium hydroxide solution
 *
 
-# UPGRADE RECIPES
-
-* Guns
-*
-
-# RENAME
+# LOCALE
 
 *
 
-# TECHNOLOGY DEPENDENCIES
+# HIDE
 
-* Alloy processing
+* Gun, laser and/or plasma turrets ?
 *
 
-# ISSUES I DON'T WANT TO DEAL WITH
+# ORDER
 
+* Petrochemical refining tab
+* Barrels and Fluids
+*
+
+# BUGS
+
+*
+
+# ISSUES I DON'T WANT/NEED TO DEAL WITH
+
+* Adjustable inserter GUI
 * Carbon dioxide from charcoal vs carbon ?
+* Research queue on
+* Artisanal reskin tier labels (small storage tanks, armor, spidertrons)
 *
 
 # ISSUES I CAN'T SOLVE
 
+* Separate bonus for all gun turrets
 *

@@ -30,6 +30,8 @@ change_default("bool-setting", "bobmods-plates-convert-recipes", false)
 change_default("bool-setting", "bobmods-power-heatsources", false)
 
 -- SHORTCUTS-ICK
+change_default("bool-setting", "discharge-defense-remote", false)
+change_default("bool-setting", "active-defense-equipment", false)
 change_default("string-setting", "spidertron-remote", "enabled-hidden")
 
 
@@ -69,3 +71,7 @@ hide_setting("bool-setting", "bobmods-power-heatsources")
 -- BOBTECH
 hide_setting("bool-setting", "bobmods-tech-colorupdate")
 hide_setting("bool-setting", "bobmods-burnerphase")
+
+-- SHORTCUTS-ICK
+hide_setting("bool-setting", "active-defense-equipment")
+hide_setting("bool-setting", "discharge-defense-remote")

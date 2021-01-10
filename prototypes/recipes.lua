@@ -8,13 +8,21 @@ end
 local function update_ingredient(recipe_name, item, new_count)
   if data.raw.recipe[recipe_name] then
     local recipe = data.raw.recipe[recipe_name].ingredients
-    for i, ingredient in pairs(recipe) do
-      if ingredient.name == item then
-        table.remove(recipe, i)
+    for _, difficulty in pairs({"normal", "expensive"}) do
+      if data.raw.recipe[recipe_name][difficulty] and data.raw.recipe[recipe_name][difficulty].ingredients then
+        recipe = data.raw.recipe[recipe_name][difficulty].ingredients
+        break
       end
     end
-    if new_count >= 1 then
-      table.insert(recipe, {type = "item", name = item, amount = new_count})
+    if recipe then
+      for i, ingredient in pairs(recipe) do
+        if ingredient.name == item then
+          table.remove(recipe, i)
+        end
+      end
+      if new_count >= 1 then
+        table.insert(recipe, {type = "item", name = item, amount = new_count})
+      end
     end
   end
 end
@@ -31,7 +39,6 @@ update_ingredient("angels-warehouse", "iron-plate", 80)
 update_ingredient("angels-warehouse", "stone-brick", 80)
 update_ingredient("angels-warehouse", "steel-plate", 40)
 
---[[
 update_ingredient("arithmetic-combinator", "red-wire", 2)
 update_ingredient("arithmetic-combinator", "green-wire", 1)
 update_ingredient("arithmetic-combinator", "electronic-circuit", 2)
@@ -60,7 +67,7 @@ update_ingredient("programmable-speaker", "red-wire", 2)
 update_ingredient("programmable-speaker", "green-wire", 2)
 update_ingredient("programmable-speaker", "electronic-circuit", 0)
 update_ingredient("programmable-speaker", "copper-cable", 1)
-]]
+
 
 -- BOBS-LOGISTICS
 if settings.startup["ick-seablock-burner-inserter"].value == false then
@@ -89,6 +96,28 @@ update_ingredient("electric-furnace", "stone-brick", 0)
 
 
 -- COMBAT
+update_ingredient("submachine-gun", "pistol", 1)
+update_ingredient("submachine-gun", "iron-plate", 5)
+update_ingredient("submachine-gun", "copper-plate", 0)
+
+update_ingredient("rifle", "submachine-gun", 1)
+update_ingredient("rifle", "steel-plate", 0)
+
+update_ingredient("sniper-rifle", "rifle", 1)
+update_ingredient("sniper-rifle", "steel-plate", 0)
+update_ingredient("sniper-rifle", "steel-gear-wheel", 0)
+
+update_ingredient("combat-shotgun", "shotgun", 1)
+update_ingredient("combat-shotgun", "wood", 5)
+update_ingredient("combat-shotgun", "iron-plate", 0)
+update_ingredient("combat-shotgun", "iron-gear-wheel", 0)
+update_ingredient("combat-shotgun", "copper-plate", 0)
+
+update_ingredient("uranium-rounds-magazine", "piercing-rounds-magazine", 1)
+update_ingredient("uranium-rounds-magazine", "uranium-238", 1)
+update_ingredient("uranium-rounds-magazine", "uranium-bullet", 0)
+update_ingredient("uranium-rounds-magazine", "magazine", 0)
+
 update_ingredient("heavy-armor", "light-armor", 1)
 update_ingredient("heavy-armor", "steel-plate", 40)
 
@@ -106,13 +135,17 @@ update_ingredient("tankotron", "tank", 1)
 update_ingredient("tankotron", "spidertron-cannon", 0)
 
 
+-- PETROCHEM-REFINING
+update_ingredient("cliff-explosives", "grenade", 0)
+update_ingredient("cliff-explosives", "iron-plate", 5)
+update_ingredient("cliff-explosives", "wood-charcoal", 10)
+
+
 -- CHEMICAL AND MIXING FURNACE RECIPES
 change_crafting_category("lithium-cobalt-oxide", "chemical-smelting")
 change_crafting_category("silicon-nitride", "chemical-smelting")
 
 change_crafting_category("silicon-carbide", "sintering")
-change_crafting_category("alien-blue-alloy", "sintering")
-change_crafting_category("alien-orange-alloy", "sintering")
 change_crafting_category("tungsten-carbide", "sintering")
 change_crafting_category("tungsten-carbide-2", "sintering")
 change_crafting_category("copper-tungsten-alloy", "sintering")
