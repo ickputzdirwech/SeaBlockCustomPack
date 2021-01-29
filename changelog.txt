@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.6
+Date: 2021-01-26
+  Features:
+    - Grouped all ammo turret damage bonuses together (gun and sniper turrets).
+  Changes:
+    - Removed even more things that were implemented in to the "Sea Block" mod version 0.5.2.
+    - Made use of the new "forced_value" introduced in 1.1.9 to set the value for other mods settings.
+  Recipes:
+    - Atomic bombs require an explosive rocket.
+    - Explosive cannon shells require a cannon shell.
+    - Explosive uranium cannon shells require a uranium cannon shell.
+    - Tanks require a car.
+  Graphics:
+    - Fixed modules 2 and 3 technology icon size.
+    - Fixed infinite worker robot cargo size technology icon.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.5
 Date: 2021-01-10
   Features:

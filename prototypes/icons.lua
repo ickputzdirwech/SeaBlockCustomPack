@@ -154,3 +154,15 @@ if data.raw.lab["lab-2"] and data.raw.item["lab-2"] then
   data.raw.lab["lab-2"].icon = nil
   data.raw.lab["lab-2"].icons = data.raw.item["lab-2"].icons
 end
+
+
+-- TECHNOLOGIES
+if data.raw.technology["modules-2"] and data.raw.technology["modules-3"] then
+  data.raw.technology["modules-2"].icon_size = 256
+  data.raw.technology["modules-3"].icon_size = 256
+end
+
+if data.raw.technology["bob-infinite-worker-robots-storage-1"] and data.raw.technology["worker-robots-storage-1"] then
+  data.raw.technology["bob-infinite-worker-robots-storage-1"].icon = nil
+  data.raw.technology["bob-infinite-worker-robots-storage-1"].icons = data.raw.technology["worker-robots-storage-1"].icons
+end

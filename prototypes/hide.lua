@@ -164,10 +164,6 @@ hide_stuff("big-burner-generator", "item", nil, "big-burner-generator")
 hide_stuff("petroleum-generator", "item", nil, "petroleum-generator", "unlock-recipe")
 hide_stuff("oil-steam-boiler", "item", nil, "OilBurning")
 
-hide_stuff("stone-chemical-furnace", "item", "assembling-machine", "chemical-processing-1")
-hide_stuff("steel-chemical-furnace", "item", "assembling-machine", "steel-chemical-furnace")
-hide_stuff("electric-chemical-furnace", "item", "assembling-machine", "electric-chemical-furnace")
-
 hide_stuff("stone-mixing-furnace", "item", "assembling-machine", "alloy-processing", "unlock-recipe")
 hide_stuff("steel-mixing-furnace", "item", "assembling-machine", "steel-mixing-furnace")
 hide_stuff("electric-mixing-furnace", "item", "assembling-machine", "electric-mixing-furnace")
@@ -182,17 +178,6 @@ hide_stuff("pollution-clean-processor-3", "item")
 hide_stuff("pollution-create-processor", "tool")
 hide_stuff("pollution-create-processor-2", "item")
 hide_stuff("pollution-create-processor-3", "item")
-
-
--- INTERMEDIATE-PRODUCTS
-hide_stuff("robot-brain-combat", "item")
-hide_stuff("robot-tool-combat", "item")
-hide_stuff("robot-brain-combat-2", "item")
-hide_stuff("robot-tool-combat-2", "item")
-hide_stuff("robot-brain-combat-3", "item")
-hide_stuff("robot-tool-combat-3", "item")
-hide_stuff("robot-brain-combat-4", "item")
-hide_stuff("robot-tool-combat-4", "item")
 
 
 -- COMBAT
@@ -307,14 +292,9 @@ hide_stuff(nil, nil, nil, "stronger-explosives-5", "landmine")
 hide_stuff(nil, nil, nil, "stronger-explosives-6", "landmine")
 hide_stuff(nil, nil, nil, "stronger-explosives-7", "landmine")
 
-hide_stuff("defender-robot", "item", nil, "defender")
-hide_stuff("distractor-robot", "item", nil, "distractor")
-hide_stuff("destroyer-robot", "item", nil, "destroyer")
-hide_stuff("bob-laser-robot", "item", "combat-robot", "bob-laser-robot")
 hide_stuff("defender-capsule", "capsule")
 hide_stuff("distractor-capsule", "capsule")
 hide_stuff("destroyer-capsule", "capsule")
-hide_stuff("bob-laser-robot-capsule", "capsule")
 hide_stuff("defender", nil, "combat-robot")
 hide_stuff("distractor", nil, "combat-robot")
 hide_stuff("destroyer", nil, "combat-robot")
@@ -326,8 +306,6 @@ hide_stuff("bob-robot-plasma-drone", "item", "unit", "bob-robot-plasma-drones")
 
 hide_stuff("robot-drone-frame", "item", nil, "robotics", "remove-unlock")
 hide_stuff("robot-drone-frame-large", "item", nil, "robotics", "remove-unlock")
-
-hide_stuff("combat-robot-dispenser-equipment", "item")
 
 hide_stuff(nil, nil, nil, "follower-robot-count-1")
 hide_stuff(nil, nil, nil, "follower-robot-count-2")

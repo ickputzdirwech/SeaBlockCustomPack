@@ -1,6 +1,6 @@
 This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/mod/SeaBlockMetaPack). Other than the original mod pack this mod applies some small changes, mostly hiding unnecessary clutter. You can download the mod on the [Factorio Mod Portal](https://mods.factorio.com/mod/SeaBlockCustomPack). All changes, including to dependencies, can be found below.
 
-**Please note:** For full experience of this modpack you have to reset your mod settings. As some of them might be hidden, you have to use the red "reset X options to default" button in the top right corner of the mod settings menu. If the button is not available just change any setting temporarily and then click the button. Afterwards you can safely change all visible mod settings to your preferences.
+**Please note:** For full experience of this modpack it is advised to check your mod settings and reset them to default. Feel free to set your own preferences afterwards.
 
 
 # Dependency changes
@@ -40,25 +40,24 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 
 * All offshore pumps can be placed anywhere on land.
 * Increased small storage tank and small inline storage tank size from 2.5k to 5k.
+* Grouped all ammo turret damage bonuses together (gun and sniper turrets).
 
 
-#### Settings
+#### Startup settings (WIP)
 
-* Changed startup setting "Enable pressure fluid tanks" from mod "Angel's Addons - Storage Options" default to "false" and hid it.
-* Changed startup setting "Auto-barreling" from mod "Angel's Refining" default to "true".
-* Hid startup settings regarding "Starting resources" from mod "Angel's Refining".
-* Changed startup settings "Always show assembling machines" and "Always show products" from "Bob & Angel RAWs Patch" default to "false".
-* Changed startup setting "Multi-purpose furnaces" from "Bob's Assembling machines mod" default to "false" and hid it.
-* Changed startup setting "Fluid burning furnaces" from "Bob's Assembling machines mod" default to "false".
-* Changed startup settings "Fluid wagon base size" and "Storage tank base size" from "Bob's logistics mod" default to 50.
-* Changed startup settings "Add conversion recipes" from "Bob's Metals, Chemicals and Intermediates mod" default to "false" and hid it.
-* Hid startup settings "Enable water ores" and "infinite ores" from "Bob's Ores mod" (do nothing).
-* Changed startup setting "Burner and fluid powered heat sources" from mod "Bob's Power mod" default to "true" and hid it (does nothing).
-* Hid startup setting "Burner power phase" from "Bob's Technology mod" (messes everything up).
+* Forced "Enable pressure fluid tanks" from "Angel's Addons - Storage Options" to "false" and hid it.
+* Changed "Auto-barreling" from "Angel's Refining" default to "true".
+* Hid multiple "Starting resources" related settings from "Angel's Refining".
+* Changed "Always show assembling machines" and "Always show products" from "Bob & Angel RAWs Patch" default to "false".
+* Forced "Multi-purpose furnaces" and "Oil burning furnaces" from "Bob's Assembling machines mod" to "false" and hid them.
+* Changed "Fluid wagon base size" and "Storage tank base size" from "Bob's logistics mod" default to 50.
+* Forced "Add conversion recipes" and "Expensive electrolysis" from "Bob's Metals, Chemicals and Intermediates mod" to "false" and hid them.
+* Hid "Enable water ores" and "infinite ores" from "Bob's Ores mod" (do nothing).
+* Forced startup settings "Burner and fluid powered heat sources" and "Burner power phase" from "Bob's Power mod" default to "false" and hid them.
 * Hid startup setting "Science pack colors update" from "Bob's Technology mod" (does nothing).
-* Changes startup setting "Vehicle: Spidertron remote" from mod "Shortcuts for 1.1" default to "Enabled (hide remote from inventory)".
-* Changed startup setting "Equipment: Personal laser defense" from mod "Shortcuts for 1.1" default to "false" and hid it.
-* Changed startup setting "Equipment: Discharge defense remote" from mod "Shortcuts for 1.1" default to "false" and hid it.
+* Forced "Robot update" from "Bob's Warfare mod" to false and hid it.
+* Forced "Equipment: Personal laser defense" and "Equipment: Discharge defense remote" from "Shortcuts for 1.1" to "false" and hid them.
+* Changed "Vehicle: Spidertron remote" from "Shortcuts for 1.1" default to "Enabled (hide remote from inventory)".
 * Added startup setting "Hide burner inserter", default true.
 * Added startup setting "Hide walls and gates", default true.
 
@@ -72,6 +71,10 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Steel and electric furnaces require stone and steel furnaces.
 * Guns require their previous tier.
 * Reset uranium rounds magazine recipe to the vanilla ingredients.
+* Atomic bombs require an explosive rocket.
+* Explosive cannon shells require a cannon shell.
+* Explosive uranium cannon shells require a uranium cannon shell.
+* Tanks require a car.
 * Armors require their previous tier.
 * Tankotrons require a tank instead of spidertron cannons.
 * If walls and gates are enabled, reinforced walls and gates require normal walls and gates.
@@ -95,6 +98,9 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Added roman numerals to the two carbon dioxide recipes.
 * New icons for thermal water recipes.
 * Changed clean ceramic filter recipe icon to spent ceramic filter icon.
+* Fixed modules 2 and 3 technology icon size.
+* Fixed infinite worker robot cargo size technology icon.
+
 
 #### Locale
 
@@ -118,7 +124,7 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Hid burner and big burner generators.
 * Hid burner and fluid burning heat sources.
 * Hid diesel generator and oil boiler.
-* Hid chemical and metal mixing furnaces.
+* Hid metal mixing furnaces.
 * Hid all combat robots and their components.
 * Hid spidertron cannon.
 * Hid landmines.

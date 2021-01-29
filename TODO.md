@@ -27,6 +27,8 @@
 # RECIPES
 
 * Concrete ?
+* Spidertrons ?
+* Personal roboports ?
 *
 
 # TECHNOLOGIES
@@ -69,9 +71,9 @@
 * Carbon dioxide from charcoal vs carbon ?
 * Research queue on
 * Artisanal reskin tier labels (small storage tanks, armor, spidertrons)
+* Merge worker robot cargo size technologies
 *
 
 # ISSUES I CAN'T SOLVE
 
-* Separate bonus for all gun turrets
 *

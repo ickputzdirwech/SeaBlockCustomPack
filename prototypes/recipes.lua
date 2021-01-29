@@ -1,9 +1,9 @@
 -- FUNCTIONS
-local function change_crafting_category(name, new_category)
+--[[local function change_crafting_category(name, new_category)
   if data.raw.recipe[name] then
     data.raw.recipe[name].category = new_category
   end
-end
+end]]
 
 local function update_ingredient(recipe_name, item, new_count)
   if data.raw.recipe[recipe_name] then
@@ -118,6 +118,20 @@ update_ingredient("uranium-rounds-magazine", "uranium-238", 1)
 update_ingredient("uranium-rounds-magazine", "uranium-bullet", 0)
 update_ingredient("uranium-rounds-magazine", "magazine", 0)
 
+update_ingredient("atomic-bomb", "explosive-rocket", 1)
+update_ingredient("atomic-bomb", "rocket-booster", 0)
+update_ingredient("atomic-bomb", "explosives", 7)
+
+update_ingredient("explosive-cannon-shell", "cannon-shell", 1)
+update_ingredient("explosive-cannon-shell", "steel-plate", 0)
+update_ingredient("explosive-cannon-shell", "plastic-bar", 0)
+update_ingredient("explosive-cannon-shell", "explosives", 1)
+
+update_ingredient("explosive-uranium-cannon-shell", "uranium-cannon-shell", 1)
+update_ingredient("explosive-uranium-cannon-shell", "explosives", 1)
+update_ingredient("explosive-uranium-cannon-shell", "explosive-cannon-shell", 0)
+update_ingredient("explosive-uranium-cannon-shell", "uranium-238", 0)
+
 update_ingredient("heavy-armor", "light-armor", 1)
 update_ingredient("heavy-armor", "steel-plate", 40)
 
@@ -131,6 +145,11 @@ update_ingredient("power-armor-mk2", "power-armor", 1)
 update_ingredient("power-armor-mk2", "processing-unit", 20)
 update_ingredient("power-armor-mk2", "electric-engine-unit", 20)
 
+update_ingredient("tank", "car", 1)
+update_ingredient("tank", "engine-unit", 24)
+update_ingredient("tank", "steel-plate", 45)
+update_ingredient("tank", "iron-gear-wheel", 5)
+
 update_ingredient("tankotron", "tank", 1)
 update_ingredient("tankotron", "spidertron-cannon", 0)
 
@@ -139,13 +158,3 @@ update_ingredient("tankotron", "spidertron-cannon", 0)
 update_ingredient("cliff-explosives", "grenade", 0)
 update_ingredient("cliff-explosives", "iron-plate", 5)
 update_ingredient("cliff-explosives", "wood-charcoal", 10)
-
-
--- CHEMICAL AND MIXING FURNACE RECIPES
-change_crafting_category("lithium-cobalt-oxide", "chemical-smelting")
-change_crafting_category("silicon-nitride", "chemical-smelting")
-
-change_crafting_category("silicon-carbide", "sintering")
-change_crafting_category("tungsten-carbide", "sintering")
-change_crafting_category("tungsten-carbide-2", "sintering")
-change_crafting_category("copper-tungsten-alloy", "sintering")
