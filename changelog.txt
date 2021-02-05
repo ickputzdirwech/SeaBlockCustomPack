@@ -1,6 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.7
+Date: 2021-02-05
+  Bugfixes:
+    - Fixed that a few redundant technologies weren't hidden.
+    - Fixed that un-researching an ammo turret damage bonus in the editor wouldn't reduce the bonus.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.6
-Date: 2021-01-26
+Date: 2021-01-29
   Features:
     - Grouped all ammo turret damage bonuses together (gun and sniper turrets).
   Changes:

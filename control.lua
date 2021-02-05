@@ -24,8 +24,10 @@ script.on_event(defines.events.on_research_finished, function(event)
   fix_turret_modifiers(event.research.force)
 end)
 
+script.on_event(defines.events.on_research_reversed, function(event)
+  fix_turret_modifiers(event.research.force)
+end)
+
 script.on_event(defines.events.on_technology_effects_reset, function(event)
-  for _, force in pairs(game.forces) do
-    fix_turret_modifiers(force)
-  end
+  fix_turret_modifiers(event.force)
 end)
