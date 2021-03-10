@@ -1,8 +1,5 @@
 -- ITEM-GROUP
 if data.raw["item-group"]["logistics"] then
-  data.raw["item-group"]["logistics"].icon = nil
-  data.raw["item-group"]["logistics"].icon_size = nil
-  data.raw["item-group"]["logistics"].icon_mipmaps = nil
   data.raw["item-group"]["logistics"].icons = {
     {
       icon = "__base__/graphics/icons/medium-electric-pole.png",
@@ -42,8 +39,15 @@ end
 
 
 -- RECIPE
+if data.raw.recipe["enriched-fuel-from-liquid-fuel"] then
+  data.raw.recipe["enriched-fuel-from-liquid-fuel"].icons = angelsmods.functions.create_solid_recipe_icon(
+    {"liquid-fuel"},
+    "enriched-fuel"
+  )
+end
+
 if data.raw.recipe["diesel-fuel"] then
-  data.raw.recipe["diesel-fuel"].icon = "__KS_Power_quickfix__/graphics/diesel-fuel.png"
+  data.raw.recipe["diesel-fuel"].icon = "__KS_Power__/graphics/diesel-fuel.png"
 end
 
 if data.raw.item["rocket-booster"] and data.raw.recipe["rocket-booster-1"] and data.raw.recipe["rocket-booster-2"] then
@@ -151,7 +155,6 @@ end
 
 -- ENTITY
 if data.raw.lab["lab-2"] and data.raw.item["lab-2"] then
-  data.raw.lab["lab-2"].icon = nil
   data.raw.lab["lab-2"].icons = data.raw.item["lab-2"].icons
 end
 
@@ -163,6 +166,25 @@ if data.raw.technology["modules-2"] and data.raw.technology["modules-3"] then
 end
 
 if data.raw.technology["bob-infinite-worker-robots-storage-1"] and data.raw.technology["worker-robots-storage-1"] then
-  data.raw.technology["bob-infinite-worker-robots-storage-1"].icon = nil
   data.raw.technology["bob-infinite-worker-robots-storage-1"].icons = data.raw.technology["worker-robots-storage-1"].icons
 end
+
+-- FIX ALIEN SCIENCE PACK ICONS
+local inputs = {
+  mod = "bobs",
+  group = "technology",
+  type = "tool",
+  icon_name = "science-pack",
+  tier_labels = false,
+}
+
+local items = {
+  ["alien-science-pack"] = {subgroup = "alien-science-pack", flat_icon = true},
+  ["alien-science-pack-blue"] = {subgroup = "alien-science-pack", flat_icon = true},
+  ["alien-science-pack-orange"] = {subgroup = "alien-science-pack", flat_icon = true},
+  ["alien-science-pack-purple"] = {subgroup = "alien-science-pack", flat_icon = true},
+  ["alien-science-pack-yellow"] = {subgroup = "alien-science-pack", flat_icon = true},
+  ["alien-science-pack-green"] = {subgroup = "alien-science-pack", flat_icon = true},
+  ["alien-science-pack-red"] = {subgroup = "alien-science-pack", flat_icon = true}
+}
+reskins.lib.create_icons_from_list(items, inputs)

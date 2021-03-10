@@ -1,4 +1,39 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.8
+Date: 2021-03-10
+  Features:
+    - Removed some stuff that was implemented in Sea Block and Circuit Processing.
+    - Fix for the missing tooltip for the ingredient slot of the composter from Angel's Bio Processing.
+    - Changes made to the combinator recipes are disabled if Wire Shortcuts mod is active (thx Seraphendipity for the idea).
+  Settings:
+    - Added startup setting "Hide gold science pack", default true.
+    - Changed "Long inserters 2 research" and "More inserters 2 research" from "Bob's Adjustable inserters mod" default to "true".
+    - Changed "New accumulators", "Burner electric generator", "Fluid burning generator" and "New solar panels" from "Bob's Power mod" default to "true".
+    - Removed changes to startup setting "Vehicle: Spidertron remote" from "Shortcuts for 1.1".
+  Dependencies:
+    - Removed dependency: KS_Power_quickfix, A Sea Block Config
+    - Added dependency: KS_Power
+    - Added optional dependency: reskins-compatibility and RecipeBook
+    - Updated mod versions.
+  Technologies:
+    - Speed, efficiency and productivity modules 0 are dependent on modules lab.
+    - Replaced gold science pack with automation, logistic, military and chemical science packs.
+    - All alien science packs are now unlocked by "Outworld Biology Testing".
+  Graphics:
+    - Fixed that alien science pack icons weren't the high resolution ones from Artisanal Reskins.
+    - Improved enriched fuel block recipe icon to be in line with the solid fuel recipes.
+  Locale:
+    - Changed ceramic filter cleaning recipe name from "Clean ceramic filter" to "Ceramic filter cleaning".
+    - Added French and German translation.
+  Hidden:
+    - Hid gold science pack.
+  Order:
+    - Made order of science packs in labs more consistent.
+  Bugfixes:
+    - Fixed that diesel generator technology wasn't renamed to "Diesel fuel".
+    - Fixed that "Robotics", "Military 2-4" "Energy weapons damage" and "Weapons shooting speed" technologies were accidently hidden.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.7
 Date: 2021-02-05
   Bugfixes:

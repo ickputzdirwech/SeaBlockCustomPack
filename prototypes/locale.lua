@@ -1,19 +1,19 @@
-local function change_name(name)
+local function change_name(type, name)
   if data.raw.recipe[name] then
-    data.raw.recipe[name].localised_name = {"ick-name."..name}
+    data.raw.recipe[name].localised_name = {type.."."..name}
   end
 end
 
-change_name("coolant-used-filtration-1")
-change_name("coolant-used-filtration-2")
+change_name("recipe-name", "coolant-used-filtration-1")
+change_name("recipe-name", "coolant-used-filtration-2")
 
-change_name("gas-carbon-dioxide-from-wood")
-change_name("carbon-separation-2")
+change_name("recipe-name", "gas-carbon-dioxide-from-wood")
+change_name("recipe-name", "carbon-separation-2")
 
-change_name("filter-ceramic-refurbish")
+change_name("recipe-name", "filter-ceramic-refurbish")
 
-if data.raw.technology["diesel-generator"] then
-  data.raw.technology["diesel-generator"].localised_name = {"fluid-name.diesel-fuel"}
+if data.raw.technology["petroleum-generator"] then
+  data.raw.technology["petroleum-generator"].localised_name = {"fluid-name.diesel-fuel"}
 end
 
 for _, item in pairs(data.raw.item) do

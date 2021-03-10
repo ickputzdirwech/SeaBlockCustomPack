@@ -1,3 +1,30 @@
+-- COMPOST RECIPES
+data:extend(
+{
+	{
+		type = "item-group",
+		name = "ick-compost",
+    localised_name = {"", {"entity-name.composter"}},
+		order = "z",
+    icon = "__angelsbioprocessing__/graphics/technology/fermentation-tech.png",
+    icon_size = 128
+	},
+	{
+		type = "item-subgroup",
+		name = "ick-compost",
+    group = "ick-compost",
+		order = "a"
+	}
+})
+
+for _, recipe in pairs(data.raw.recipe) do
+  if string.sub(recipe.name, 1, 16) == "angels-bio-void-" then
+    recipe.hidden = false
+    recipe.hide_from_player_crafting = true
+    recipe.subgroup = "ick-compost"
+  end
+end
+
 -- FUNCTIONS
 --[[local function change_crafting_category(name, new_category)
   if data.raw.recipe[name] then
@@ -39,35 +66,36 @@ update_ingredient("angels-warehouse", "iron-plate", 80)
 update_ingredient("angels-warehouse", "stone-brick", 80)
 update_ingredient("angels-warehouse", "steel-plate", 40)
 
-update_ingredient("arithmetic-combinator", "red-wire", 2)
-update_ingredient("arithmetic-combinator", "green-wire", 1)
-update_ingredient("arithmetic-combinator", "electronic-circuit", 2)
-update_ingredient("arithmetic-combinator", "copper-cable", 2)
+if mods["WireShortcuts"] then else
+	update_ingredient("arithmetic-combinator", "red-wire", 2)
+	update_ingredient("arithmetic-combinator", "green-wire", 1)
+	update_ingredient("arithmetic-combinator", "electronic-circuit", 2)
+	update_ingredient("arithmetic-combinator", "copper-cable", 2)
 
-update_ingredient("decider-combinator", "red-wire", 1)
-update_ingredient("decider-combinator", "green-wire", 2)
-update_ingredient("decider-combinator", "electronic-circuit", 2)
-update_ingredient("decider-combinator", "copper-cable", 2)
+	update_ingredient("decider-combinator", "red-wire", 1)
+	update_ingredient("decider-combinator", "green-wire", 2)
+	update_ingredient("decider-combinator", "electronic-circuit", 2)
+	update_ingredient("decider-combinator", "copper-cable", 2)
 
-update_ingredient("constant-combinator", "red-wire", 1)
-update_ingredient("constant-combinator", "green-wire", 1)
-update_ingredient("constant-combinator", "electronic-circuit", 0)
-update_ingredient("constant-combinator", "copper-cable", 3)
+	update_ingredient("constant-combinator", "red-wire", 1)
+	update_ingredient("constant-combinator", "green-wire", 1)
+	update_ingredient("constant-combinator", "electronic-circuit", 0)
+	update_ingredient("constant-combinator", "copper-cable", 3)
 
-update_ingredient("spacex-combinator", "constant-combinator", 1)
-update_ingredient("spacex-combinator", "electronic-circuit", 3)
-update_ingredient("spacex-combinator", "copper-cable", 0)
+	update_ingredient("spacex-combinator", "constant-combinator", 1)
+	update_ingredient("spacex-combinator", "electronic-circuit", 3)
+	update_ingredient("spacex-combinator", "copper-cable", 0)
 
-update_ingredient("power-switch", "red-wire", 1)
-update_ingredient("power-switch", "green-wire", 1)
-update_ingredient("power-switch", "electronic-circuit", 0)
-update_ingredient("power-switch", "copper-cable", 3)
+	update_ingredient("power-switch", "red-wire", 1)
+	update_ingredient("power-switch", "green-wire", 1)
+	update_ingredient("power-switch", "electronic-circuit", 0)
+	update_ingredient("power-switch", "copper-cable", 3)
 
-update_ingredient("programmable-speaker", "red-wire", 2)
-update_ingredient("programmable-speaker", "green-wire", 2)
-update_ingredient("programmable-speaker", "electronic-circuit", 0)
-update_ingredient("programmable-speaker", "copper-cable", 1)
-
+	update_ingredient("programmable-speaker", "red-wire", 2)
+	update_ingredient("programmable-speaker", "green-wire", 2)
+	update_ingredient("programmable-speaker", "electronic-circuit", 0)
+	update_ingredient("programmable-speaker", "copper-cable", 1)
+end
 
 -- BOBS-LOGISTICS
 if settings.startup["ick-seablock-burner-inserter"].value == false then
@@ -78,7 +106,6 @@ end
 
 if settings.startup["ick-seablock-walls-and-gates"].value == false then
   update_ingredient("reinforced-wall", "stone-wall", 1)
-  update_ingredient("reinforced-wall", "steel-plate", 3)
   update_ingredient("reinforced-wall", "stone-brick", 0)
 
   update_ingredient("reinforced-gate", "gate", 1)
@@ -101,7 +128,7 @@ update_ingredient("submachine-gun", "iron-plate", 5)
 update_ingredient("submachine-gun", "copper-plate", 0)
 
 update_ingredient("rifle", "submachine-gun", 1)
-update_ingredient("rifle", "steel-plate", 0)
+update_ingredient("rifle", "steel-plate", 5)
 
 update_ingredient("sniper-rifle", "rifle", 1)
 update_ingredient("sniper-rifle", "steel-plate", 0)
@@ -133,7 +160,7 @@ update_ingredient("explosive-uranium-cannon-shell", "explosive-cannon-shell", 0)
 update_ingredient("explosive-uranium-cannon-shell", "uranium-238", 0)
 
 update_ingredient("heavy-armor", "light-armor", 1)
-update_ingredient("heavy-armor", "steel-plate", 40)
+update_ingredient("heavy-armor", "steel-plate", 44)
 
 update_ingredient("modular-armor", "heavy-armor", 1)
 update_ingredient("modular-armor", "steel-plate", 0)

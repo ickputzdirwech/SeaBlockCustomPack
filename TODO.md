@@ -8,7 +8,7 @@
 
 # DEPENDENCIES
 
-* Recipe book instead of FNEI ?
+* Recipe book or FNEI ?
 *
 
 # SETTINGS
@@ -33,21 +33,20 @@
 
 # TECHNOLOGIES
 
-* Remove alien science ?
+* Remove alien science packs
 *
 
 # ICONS
 
-* Electronic circuit vs. electronic circuit board
-* sb-water-mineralized-crystallization recipe
-* enriched fuel block recipe
 * sodium
 * sodium hydroxide
 * sodium hydroxide solution
+* Diesel tech icon
 *
 
 # LOCALE
 
+* translation via factorio-mods-localization
 *
 
 # HIDE
@@ -67,8 +66,7 @@
 
 # ISSUES I DON'T WANT/NEED TO DEAL WITH
 
-* Adjustable inserter GUI
-* Carbon dioxide from charcoal vs carbon ?
+* Adjustable inserter GUI icon
 * Research queue on
 * Artisanal reskin tier labels (small storage tanks, armor, spidertrons)
 * Merge worker robot cargo size technologies

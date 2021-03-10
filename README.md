@@ -9,6 +9,7 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 
 * Added minimal versions to all dependencies.
 
+
 #### Removed dependencies
 
 * [Explosive Excavation](https://mods.factorio.com/mod/Explosive%20Excavation)
@@ -24,12 +25,14 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 
 * [Artisanal Reskins: Angel's Mods](https://mods.factorio.com/mod/reskins-angels)
 * [Artisanal Reskins: Bob's Mods](https://mods.factorio.com/mod/reskins-bobs)
+* [Artisanal Reskins: Compatibility](https://mods.factorio.com/mod/reskins-compatibility)
 * [Artisanal Reskins: Library](https://mods.factorio.com/mod/reskins-library)
 * [Bob & Angel RAWs patch](https://mods.factorio.com/mod/baraws)
 * [Factorio Library](https://mods.factorio.com/mod/flib)
 * [Factory Planner](https://mods.factorio.com/mod/factoryplanner)
 * [Module Inserter](https://mods.factorio.com/mod/ModuleInserter)
 * [Northify Tool](https://mods.factorio.com/mod/northifytool)
+* [Recipe Book](https://mods.factorio.com/mod/RecipeBook)
 * [Shortcuts for 1.1](https://mods.factorio.com/mod/Shortcuts-ick)
 * [Squeak Through](https://mods.factorio.com/mod/Squeak%20Through)
 
@@ -41,23 +44,24 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * All offshore pumps can be placed anywhere on land.
 * Increased small storage tank and small inline storage tank size from 2.5k to 5k.
 * Grouped all ammo turret damage bonuses together (gun and sniper turrets).
+* Fix for the missing tooltip for the ingredient slot of the composter from Angel's Bio Processing.
 
 
 #### Startup settings (WIP)
 
 * Forced "Enable pressure fluid tanks" from "Angel's Addons - Storage Options" to "false" and hid it.
 * Changed "Auto-barreling" from "Angel's Refining" default to "true".
-* Hid multiple "Starting resources" related settings from "Angel's Refining".
 * Changed "Always show assembling machines" and "Always show products" from "Bob & Angel RAWs Patch" default to "false".
-* Forced "Multi-purpose furnaces" and "Oil burning furnaces" from "Bob's Assembling machines mod" to "false" and hid them.
+* Changed "Long inserters 2 research" and "More inserters 2 research" from "Bob's Adjustable inserters mod" default to "true".
+* Forced "Recipe furnaces" and "Fluid burning furnaces" from "Bob's Assembling machines mod" to "false" and hid them.
 * Changed "Fluid wagon base size" and "Storage tank base size" from "Bob's logistics mod" default to 50.
-* Forced "Add conversion recipes" and "Expensive electrolysis" from "Bob's Metals, Chemicals and Intermediates mod" to "false" and hid them.
-* Hid "Enable water ores" and "infinite ores" from "Bob's Ores mod" (do nothing).
-* Forced startup settings "Burner and fluid powered heat sources" and "Burner power phase" from "Bob's Power mod" default to "false" and hid them.
+* Forced "Add conversion recipes" from "Bob's Metals, Chemicals and Intermediates mod" to "false" and hid it.
+* Changed "New accumulators", "Burner electric generator", "Fluid burning generator" and "New solar panels" from "Bob's Power mod" default to "true".
+* Forced startup settings "Burner and fluid powered heat sources" from "Bob's Power mod" default to "false" and hid it.
 * Hid startup setting "Science pack colors update" from "Bob's Technology mod" (does nothing).
 * Forced "Robot update" from "Bob's Warfare mod" to false and hid it.
 * Forced "Equipment: Personal laser defense" and "Equipment: Discharge defense remote" from "Shortcuts for 1.1" to "false" and hid them.
-* Changed "Vehicle: Spidertron remote" from "Shortcuts for 1.1" default to "Enabled (hide remote from inventory)".
+* Added startup setting "Hide gold science pack", default true.
 * Added startup setting "Hide burner inserter", default true.
 * Added startup setting "Hide walls and gates", default true.
 
@@ -65,7 +69,7 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 #### Recipes
 
 * Warehouses require silos.
-* Combinators require red and green wire.
+* Combinators require red and green wire (disabled if Wire Shortcuts mod is active).
 * Repair packs require their previous tier.
 * If burner inserters are enabled, they are an ingredient of the inserter.
 * Steel and electric furnaces require stone and steel furnaces.
@@ -83,7 +87,10 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 
 #### Technologies (WIP)
 
+* Speed, efficiency and productivity modules 0 are dependent on modules lab.
 * Warehouses and logistic warehouses are dependent on silos and logistic silos.
+* Replaced gold science packs with automation, logistic, military and chemical science packs.
+* All alien science packs are now unlocked by "Outworld Biology Testing".
 
 
 #### Graphics (WIP)
@@ -93,6 +100,8 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * New icon for "Bob's materials" tab (polished emerald).
 * Improved SpaceX Combinator icon.
 * Fixed lab 2 entity icon.
+* Fixed that alien science pack icons weren't the high resolution ones from Artisanal Reskins.
+* Improved enriched fuel block recipe icon to be in line with the solid fuel recipes.
 * Changed diesel fuel recipe icon to the diesel fuel fluid icon.
 * Added roman numerals to the two rocket booster recipes.
 * Added roman numerals to the two carbon dioxide recipes.
@@ -104,10 +113,11 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 
 #### Locale
 
+* French and German translation included.
 * Added descriptions for all empty and filled barrels, canisters and bottles.
 * Renamed carbon dioxide recipes to "Carbon dioxide from wood pellet" and "Carbon dioxide from charcoal".
 * Renamed coolant filtering recipes to "Coolant coal filtering" and "Coolant ceramic filtering".
-* Renamed ceramic filter cleaning recipe to "Clean ceramic filter".
+* Renamed ceramic filter cleaning recipe to "Ceramic filter cleaning".
 * Renamed diesel generator technology to "Diesel fuel".
 
 
@@ -124,7 +134,7 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Hid burner and big burner generators.
 * Hid burner and fluid burning heat sources.
 * Hid diesel generator and oil boiler.
-* Hid metal mixing furnaces.
+* Hid gold science pack.
 * Hid all combat robots and their components.
 * Hid spidertron cannon.
 * Hid landmines.
@@ -142,15 +152,13 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Hid ground water bore.
 * Hid alien alloys and fluids.
 * Hid bob's electrolyser from GUIs.
-* Hid pollution	modules from GUIs.
-* Hid mining drills and pumpjacks from GUIs.
-* Hid mining recipes from GUIs (had to remove all resource entities).
 * Hid iron rod and iron rod stack from GUIs.
 * Hid lithia water from GUIs.
 
 
 #### Reordered stuff (WIP)
 
+* Made order of science packs in labs more consistent.
 * Reordered "Logistics" tab.
 * Moved car, tanks, spider vehicles and artillery wagons in "Combat" tab.
 * Moved all pipes in "Barrelling and fluid control" tab.

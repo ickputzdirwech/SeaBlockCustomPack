@@ -64,6 +64,7 @@ if t[n.."1"] and t[n.."2"] and t[n.."3"] and t[n.."4"] and t[n.."5"] and t[n.."6
     local visible_tech = data.raw.technology[tech.name]
     local hidden_tech = table.deepcopy(visible_tech)
       hidden_tech.name = "hidden-"..tech.name
+      hidden_tech.localised_name = {"", {"technology-name.physical-projectile-damage"}, " "..string.sub(tech.name, 28).." - HIDDEN COPY"}
       hidden_tech.effects = {}
       for _, turret in pairs(turret_list) do
         table.insert(hidden_tech.effects, {type = "turret-attack", turret_id = turret, modifier = tech.value})

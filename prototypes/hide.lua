@@ -78,8 +78,9 @@ local function hide_stuff(name, item_type, entity_type, tech_name, effect_type)
   if tech_name then
     if effect_type == "unlock-recipe" then
       remove_effect(name, tech_name, effect_type, "recipe")
-    elseif effect_type == "landmine" or effect_type == "grenade" then
+    elseif effect_type == "landmine" or effect_type == "grenade" or effect_type == "laser-rifle" or effect_type == "beam" then
       remove_effect(effect_type, tech_name, "ammo-damage", "ammo_category")
+      remove_effect(effect_type, tech_name, "gun-speed", "ammo_category")
     else
       set_hidden(tech_name, "technology")
     end
@@ -87,29 +88,7 @@ local function hide_stuff(name, item_type, entity_type, tech_name, effect_type)
 end
 
 
--- HIDE MINING RECIPES
-data:extend({{
-		type = "resource-category",
-		name = "nothing"
-}})
-
-for _, drill in pairs(data.raw["mining-drill"]) do
-  drill.resource_categories = {"nothing"}
-end
-
-local function remove_ore(name)
-  if data.raw["resource"][name] then
-    data.raw["resource"][name] = nil
-  end
-end
-
-remove_ore("angels-ore1")
-remove_ore("angels-ore2")
-remove_ore("angels-ore3")
-remove_ore("angels-ore4")
-remove_ore("angels-ore5")
-remove_ore("angels-ore6")
-
+-- HIDE GROUND WATER RECIPE
 if data.raw["offshore-pump"]["ground-water-pump"] then
   data.raw["offshore-pump"]["ground-water-pump"].fluid = "fluid-unknown"
 end
@@ -149,10 +128,6 @@ hide_stuff("angels-storage-tank-1", "item", nil, "gas-processing", "unlock-recip
 
 
 -- PRODUCTION
-hide_stuff("burner-mining-drill", nil, "mining-drill")
-hide_stuff("electric-mining-drill", nil, "mining-drill")
-hide_stuff("pumpjack", nil, "mining-drill")
-
 hide_stuff("accumulator", "item", "accumulator", nil, "electric-energy-accumulators", "unlock-recipe")
 if data.raw.technology["electric-energy-accumulators"] and data.raw.recipe["large-accumulator"] then
   table.insert(data.raw.technology["electric-energy-accumulators"].effects, {type = "unlock-recipe", recipe = "large-accumulator"})
@@ -164,20 +139,12 @@ hide_stuff("big-burner-generator", "item", nil, "big-burner-generator")
 hide_stuff("petroleum-generator", "item", nil, "petroleum-generator", "unlock-recipe")
 hide_stuff("oil-steam-boiler", "item", nil, "OilBurning")
 
-hide_stuff("stone-mixing-furnace", "item", "assembling-machine", "alloy-processing", "unlock-recipe")
-hide_stuff("steel-mixing-furnace", "item", "assembling-machine", "steel-mixing-furnace")
-hide_stuff("electric-mixing-furnace", "item", "assembling-machine", "electric-mixing-furnace")
-
 hide_stuff("electrolyser", nil, "assembling-machine")
 
 
--- MODULES
-hide_stuff("pollution-clean-processor", "tool")
-hide_stuff("pollution-clean-processor-2", "item")
-hide_stuff("pollution-clean-processor-3", "item")
-hide_stuff("pollution-create-processor", "tool")
-hide_stuff("pollution-create-processor-2", "item")
-hide_stuff("pollution-create-processor-3", "item")
+-- SCIENCE
+hide_stuff("science-pack-gold", "tool", nil, "sct-science-pack-gold")
+hide_stuff(nil, nil, nil, "alien-research")
 
 
 -- COMBAT
@@ -299,13 +266,17 @@ hide_stuff("defender", nil, "combat-robot", "defender")
 hide_stuff("distractor", nil, "combat-robot", "distractor")
 hide_stuff("destroyer", nil, "combat-robot", "destroyer")
 
+hide_stuff(nil, nil, nil, "energy-weapons-damage-5", "beam")
+hide_stuff(nil, nil, nil, "energy-weapons-damage-6", "beam")
+hide_stuff(nil, nil, nil, "energy-weapons-damage-7", "beam")
+
 hide_stuff("bob-robot-gun-drone", "item", "unit", "bob-robot-gun-drones")
 hide_stuff("bob-robot-laser-drone", "item", "unit", "bob-robot-laser-drones")
 hide_stuff("bob-robot-flamethrower-drone", "item", "unit", "bob-robot-flamethrower-drones")
 hide_stuff("bob-robot-plasma-drone", "item", "unit", "bob-robot-plasma-drones")
 
-hide_stuff("robot-drone-frame", "item", nil, "robotics", "remove-unlock")
-hide_stuff("robot-drone-frame-large", "item", nil, "robotics", "remove-unlock")
+hide_stuff("robot-drone-frame", "item", nil, "robotics", "unlock-recipe")
+hide_stuff("robot-drone-frame-large", "item", nil, "robotics", "unlock-recipe")
 
 hide_stuff(nil, nil, nil, "follower-robot-count-1")
 hide_stuff(nil, nil, nil, "follower-robot-count-2")
@@ -347,11 +318,11 @@ hide_stuff(nil, nil, nil, "refined-flammables-5")
 hide_stuff(nil, nil, nil, "refined-flammables-6")
 hide_stuff(nil, nil, nil, "refined-flammables-7")
 
-hide_stuff("cluster-grenade", "capsule", nil, "military-4", "remove-unlock")
-hide_stuff("grenade", "capsule", nil, "military-2", "remove-unlock")
-hide_stuff("fire-capsule", "capsule", nil, "military-3", "remove-unlock")
-hide_stuff("poison-capsule", "capsule", nil, "military-3", "remove-unlock")
-hide_stuff("slowdown-capsule", "capsule", nil, "military-3", "remove-unlock")
+hide_stuff("cluster-grenade", "capsule", nil, "military-4", "unlock-recipe")
+hide_stuff("grenade", "capsule", nil, "military-2", "unlock-recipe")
+hide_stuff("fire-capsule", "capsule", nil, "military-3", "unlock-recipe")
+hide_stuff("poison-capsule", "capsule", nil, "military-3", "unlock-recipe")
+hide_stuff("slowdown-capsule", "capsule", nil, "military-3", "unlock-recipe")
 
 hide_stuff(nil, nil, nil, "stronger-explosives-1")
 hide_stuff(nil, nil, nil, "stronger-explosives-2")

@@ -1,3 +1,16 @@
+-- FIX BIO SCIENCE PACK ORDER
+if data.raw.lab["sct-lab-t4"] and data.raw.lab["sct-lab-t4"].inputs then
+  local inputs = data.raw.lab["sct-lab-t4"].inputs
+  for i, item in pairs(inputs) do
+    if item == "sct-bio-science-pack" then
+      table.remove(inputs, i)
+    end
+  end
+  table.insert(inputs, "sct-bio-science-pack")
+end
+
+
+-- FUNCTIONS
 local function change_order(type, name, new_order)
   if data.raw[type][name] then
     data.raw[type][name].order = new_order
