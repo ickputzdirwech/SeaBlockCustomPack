@@ -170,21 +170,23 @@ if data.raw.technology["bob-infinite-worker-robots-storage-1"] and data.raw.tech
 end
 
 -- FIX ALIEN SCIENCE PACK ICONS
-local inputs = {
-  mod = "bobs",
-  group = "technology",
-  type = "tool",
-  icon_name = "science-pack",
-  tier_labels = false,
-}
+if mods["reskin-bobs"] then
+  local inputs = {
+    mod = "bobs",
+    group = "technology",
+    type = "tool",
+    icon_name = "science-pack",
+    tier_labels = false,
+  }
 
-local items = {
-  ["alien-science-pack"] = {subgroup = "alien-science-pack", flat_icon = true},
-  ["alien-science-pack-blue"] = {subgroup = "alien-science-pack", flat_icon = true},
-  ["alien-science-pack-orange"] = {subgroup = "alien-science-pack", flat_icon = true},
-  ["alien-science-pack-purple"] = {subgroup = "alien-science-pack", flat_icon = true},
-  ["alien-science-pack-yellow"] = {subgroup = "alien-science-pack", flat_icon = true},
-  ["alien-science-pack-green"] = {subgroup = "alien-science-pack", flat_icon = true},
-  ["alien-science-pack-red"] = {subgroup = "alien-science-pack", flat_icon = true}
-}
-reskins.lib.create_icons_from_list(items, inputs)
+  local items = {
+    ["alien-science-pack"] = {subgroup = "alien-science-pack", flat_icon = true},
+    ["alien-science-pack-blue"] = {subgroup = "alien-science-pack", flat_icon = true},
+    ["alien-science-pack-orange"] = {subgroup = "alien-science-pack", flat_icon = true},
+    ["alien-science-pack-purple"] = {subgroup = "alien-science-pack", flat_icon = true},
+    ["alien-science-pack-yellow"] = {subgroup = "alien-science-pack", flat_icon = true},
+    ["alien-science-pack-green"] = {subgroup = "alien-science-pack", flat_icon = true},
+    ["alien-science-pack-red"] = {subgroup = "alien-science-pack", flat_icon = true}
+  }
+  reskins.lib.create_icons_from_list(items, inputs)
+end
