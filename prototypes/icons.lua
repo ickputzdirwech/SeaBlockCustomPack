@@ -170,7 +170,7 @@ if data.raw.technology["bob-infinite-worker-robots-storage-1"] and data.raw.tech
 end
 
 -- FIX ALIEN SCIENCE PACK ICONS
-if mods["reskin-bobs"] then
+if mods["reskins-bobs"] then
   local inputs = {
     mod = "bobs",
     group = "technology",

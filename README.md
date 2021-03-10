@@ -1,4 +1,4 @@
-This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/mod/SeaBlockMetaPack). Other than the original mod pack this mod applies some small changes, mostly hiding unnecessary clutter. You can download the mod on the [Factorio Mod Portal](https://mods.factorio.com/mod/SeaBlockCustomPack). All changes, including to dependencies, can be found below.
+This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/mod/SeaBlockMetaPack). Other than the original mod pack this mod applies some small changes, mostly hiding unnecessary clutter. You can download the mod on the [Factorio Mod Portal](https://mods.factorio.com/mod/SeaBlockCustomPack). All changes compared to Sea Block Pack 1.1.2 and [Sea Block](https://mods.factorio.com/mod/SeaBlock) 0.5.3 are listed below.
 
 **Please note:** For full experience of this modpack it is advised to check your mod settings and reset them to default. Feel free to set your own preferences afterwards.
 
@@ -134,7 +134,7 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Hid burner and big burner generators.
 * Hid burner and fluid burning heat sources.
 * Hid diesel generator and oil boiler.
-* Hid gold science pack.
+* Hid gold science pack (can be reenabled).
 * Hid all combat robots and their components.
 * Hid spidertron cannon.
 * Hid landmines.

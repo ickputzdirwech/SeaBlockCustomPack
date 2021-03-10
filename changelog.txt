@@ -8,8 +8,9 @@ Date: 2021-03-10
 Version: 1.1.8
 Date: 2021-03-10
   Features:
-    - Removed some stuff that was implemented in Sea Block and Circuit Processing.
     - Fix for the missing tooltip for the ingredient slot of the composter from Angel's Bio Processing.
+  Changes:
+    - Removed some stuff that was implemented in Sea Block 0.5.3 and Circuit Processing 0.4.1.
     - Changes made to the combinator recipes are disabled if Wire Shortcuts mod is active (thx Seraphendipity for the idea).
   Settings:
     - Added startup setting "Hide gold science pack", default true.
