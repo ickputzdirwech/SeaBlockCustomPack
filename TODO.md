@@ -46,7 +46,6 @@
 
 # LOCALE
 
-* translation via factorio-mods-localization
 *
 
 # HIDE
@@ -58,6 +57,7 @@
 
 * Petrochemical refining tab
 * Barrels and Fluids
+* Item group order_in_recipe
 *
 
 # BUGS

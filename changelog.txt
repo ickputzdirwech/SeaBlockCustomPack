@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.10
+Date: 2021-03-30
+  Changes:
+    - Translations are now made on Crowdin via factorio-mods-localization.
+  Bugfixes:
+    - Fixed several localization issues.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.9
 Date: 2021-03-10
   Bugfixes:
@@ -260,6 +268,7 @@ Version: 1.1.0
 Date: 2020-12-20
   Features:
     - Initial release. Forked from SeaBlockMetaPack_1.1.0
+  Changes:
     - Added changelog.txt
     - Added LICENSE (MIT)
   Dependencies:
