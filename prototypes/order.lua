@@ -10,6 +10,35 @@ if data.raw.lab["sct-lab-t4"] and data.raw.lab["sct-lab-t4"].inputs then
 end
 
 
+-- ORDER_IN_RECIPE
+local function order_in_recipe(name, new_order)
+  if data.raw["item-group"][name] then
+    data.raw["item-group"][name].order_in_recipe = new_order
+  end
+end
+
+order_in_recipe("intermediate-products", "A[intermediate]-1")
+order_in_recipe("bob-resource-products", "A[intermediate]-2")
+
+order_in_recipe("angels-fluid-control", "B[mixed]-1")
+order_in_recipe("angels-casting", "B[mixed]-2")
+order_in_recipe("angels-smelting", "B[mixed]-3")
+order_in_recipe("petrochem-refining", "B[mixed]-4")
+order_in_recipe("resource-refining", "B[mixed]-5")
+order_in_recipe("bio-processing-alien", "B[mixed]-6")
+order_in_recipe("bio-processing-vegetables", "B[mixed]-7")
+order_in_recipe("bio-processing-nauvis", "B[mixed]-8")
+order_in_recipe("water-treatment", "B[mixed]-9")
+
+order_in_recipe("sct-science", "C[endproduct]-1")
+order_in_recipe("bobmodules", "C[endproduct]-2")
+order_in_recipe("combat", "C[endproduct]-3")
+
+order_in_recipe("logistics", "D[machines]-1")
+order_in_recipe("bob-logistics", "D[machines]-2")
+order_in_recipe("production", "D[machines]-3")
+
+
 -- FUNCTIONS
 local function change_order(type, name, new_order)
   if data.raw[type][name] then
@@ -31,8 +60,9 @@ end
 
 
 -- ITEM-GROUPS
-change_order("item-group", "signals", "z")
 change_order("item-group", "angels-fluid-control", "aaa-b")
+change_order("item-group", "environment", "y")
+change_order("item-group", "signals", "z")
 
 
 -- LOGISTICS
@@ -279,6 +309,7 @@ change_subgroup("item", "robot-tool-logistic-2", "bob-robot-parts-3")
 change_subgroup("item", "robot-tool-logistic-3", "bob-robot-parts-3")
 change_subgroup("item", "robot-tool-logistic-4", "bob-robot-parts-3")
 
+change_subgroup("item", "empty-nuclear-fuel-cell", "fuel-cells")
 change_subgroup("item", "uranium-fuel-cell", "fuel-cells")
 change_subgroup("item", "plutonium-fuel-cell", "fuel-cells")
 change_subgroup("item", "used-up-uranium-fuel-cell", "fuel-cells")
@@ -450,6 +481,7 @@ change_subgroup("item", "radar-3", "radars")
 change_subgroup("item", "radar-4", "radars")
 change_subgroup("item", "radar-5", "radars")
 
+
 -- RESOURCE-REFINING
 data:extend(
 {
@@ -480,6 +512,7 @@ change_subgroup("item", "filter-ceramic-used", "geode-crystallization")
 
 -- ANGELS-SMELTING
 change_subgroup("item", "angels-plate-hot-iron", "angels-steel-casting")
+
 
 -- ANGELS-CASTING
 change_subgroup("recipe", "angels-glass-fiber-board", "bob-boards")
@@ -527,6 +560,7 @@ change_subgroup("recipe", "nuclear-fuel", "petrochem-rocket-fuel")
 
 change_order("recipe", "carbon-dioxide", "da")
 change_order("recipe", "gas-carbon-dioxide-from-wood", "c")
+
 
 -- BIO-PROCESSING-NAUVIS
 change_subgroup("item", "wood-charcoal", "petrochem-coal")

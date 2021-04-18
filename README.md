@@ -154,11 +154,14 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Hid bob's electrolyser from GUIs.
 * Hid iron rod and iron rod stack from GUIs.
 * Hid lithia water from GUIs.
+* Hid vanilla trees from deconstruction planner GUI.
+* Hid crystal rock from deconstruction planner GUI.
 
 
 #### Reordered stuff (WIP)
 
 * Made order of science packs in labs more consistent.
+* Configured order_in_recipe for all item-groups.
 * Reordered "Logistics" tab.
 * Moved car, tanks, spider vehicles and artillery wagons in "Combat" tab.
 * Moved all pipes in "Barrelling and fluid control" tab.
@@ -180,4 +183,5 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Moved fiberglass board recipe in "Intermediate products" tab.
 * Reordered "Water treatment" tab.
 * Reordered "Petrochemical refining" tab. (WIP)
+* Moved "Environment" tab to second last.
 * Moved "Signals" tab at the end.

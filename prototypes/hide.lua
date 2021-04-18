@@ -74,6 +74,9 @@ local function hide_stuff(name, item_type, entity_type, tech_name, effect_type)
   if entity_type and data.raw[entity_type][name] then
     set_flag(entity_type, name, "hidden")
     data.raw[entity_type][name].next_upgrade = nil
+    if effect_type == "not-deconstructable" then
+      set_flag(entity_type, name, "not-deconstructable")
+    end
   end
   if tech_name then
     if effect_type == "unlock-recipe" then
@@ -168,10 +171,11 @@ hide_stuff(nil, nil, nil, "energy-weapons-damage-5", "laser-rifle")
 hide_stuff(nil, nil, nil, "energy-weapons-damage-6", "laser-rifle")
 hide_stuff(nil, nil, nil, "energy-weapons-damage-7", "laser-rifle")
 
-hide_stuff(nil, nil, nil, "weapon-shooting-speed-3", "laser-rifle")
-hide_stuff(nil, nil, nil, "weapon-shooting-speed-4", "laser-rifle")
-hide_stuff(nil, nil, nil, "weapon-shooting-speed-5", "laser-rifle")
-hide_stuff(nil, nil, nil, "weapon-shooting-speed-6", "laser-rifle")
+hide_stuff(nil, nil, nil, "laser-shooting-speed-3", "laser-rifle")
+hide_stuff(nil, nil, nil, "laser-shooting-speed-4", "laser-rifle")
+hide_stuff(nil, nil, nil, "laser-shooting-speed-5", "laser-rifle")
+hide_stuff(nil, nil, nil, "laser-shooting-speed-6", "laser-rifle")
+hide_stuff(nil, nil, nil, "laser-shooting-speed-7", "laser-rifle")
 
 hide_stuff("acid-bullet-magazine", "ammo", nil, "bob-acid-bullets")
 hide_stuff("acid-bullet-projectile", "item")
@@ -359,3 +363,28 @@ hide_stuff("alien-acid", "fluid", nil, "alien-purple-research")
 hide_stuff("alien-explosive", "fluid", nil, "alien-yellow-research")
 hide_stuff("alien-poison", "fluid", nil, "alien-green-research")
 hide_stuff("alien-fire", "fluid", nil, "alien-red-research")
+
+
+-- ENVIRONMENT
+hide_stuff("tree-01", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-02", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-02-red", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-03", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-04", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-05", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-06", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-06-brown", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-07", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-08", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-08-brown", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-08-red", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-09", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-09-brown", nil, "tree", nil, "not-deconstructable")
+hide_stuff("tree-09-red", nil, "tree", nil, "not-deconstructable")
+hide_stuff("dead-dry-hary-tree", nil, "tree", nil, "not-deconstructable")
+hide_stuff("dead-grey-trunk", nil, "tree", nil, "not-deconstructable")
+hide_stuff("dead-tree-desert", nil, "tree", nil, "not-deconstructable")
+hide_stuff("dry-hary-tree", nil, "tree", nil, "not-deconstructable")
+hide_stuff("dry-tree", nil, "tree", nil, "not-deconstructable")
+
+hide_stuff("angels-crystal-rock", nil, "simple-entity", nil, "not-deconstructable")

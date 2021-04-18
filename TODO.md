@@ -9,6 +9,7 @@
 # DEPENDENCIES
 
 * Recipe book or FNEI ?
+* Update mod versions
 *
 
 # SETTINGS
@@ -42,6 +43,7 @@
 * sodium hydroxide
 * sodium hydroxide solution
 * Diesel tech icon
+* Spidertrons
 *
 
 # LOCALE
@@ -56,8 +58,7 @@
 # ORDER
 
 * Petrochemical refining tab
-* Barrels and Fluids
-* Item group order_in_recipe
+* Barrels and fluids
 *
 
 # BUGS

@@ -1,10 +1,20 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.10
-Date: 2021-03-30
+Date: 2021-04-18
   Changes:
-    - Translations are now made on Crowdin via factorio-mods-localization.
+    - Translations are now made on Crowdin (https://crowdin.com/project/factorio-mods-localization).
+  Dependencies:
+    - Updated mod versions.
+  Hidden:
+    - Hid vanilla trees from deconstruction planner GUI.
+    - Hid crystal rock from deconstruction planner GUI.
+  Order:
+    - Configured order_in_recipe for all item-groups.
+    - Moved "Environment" tab to second last.
   Bugfixes:
     - Fixed several localization issues.
+    - Changed order of new Empty nuclear fuel cell.
+    - Adjusted that laser-rifle now needs to be hidden from laser-shooting-speed instead of weapon-shooting-speed.
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.9
