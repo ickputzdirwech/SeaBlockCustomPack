@@ -6,7 +6,7 @@ Date: 02.08.2022
     - Changed date format in changelog to be inline with the base game changelog.
     - Ore silos are now hidden via the setting "Enable Angel's ore themed silos" from "Angel's Addons - Storage Options".
   Dependencies:
-    - Made dependency optional: helmod.
+    - Removed dependency: helmod.
     - Made dependancies mandatory: flib, reskins-angels, reskins-bobs, reskins-library.
     - Replaced optional dependancy Module Inserter with ModuleInserterRE.
     - Updated mod versions.
