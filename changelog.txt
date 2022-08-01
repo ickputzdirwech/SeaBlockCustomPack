@@ -1,6 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.11
+Date: 02.08.2022
+  Changes:
+    - Removed a lot of stuff that was implemented in the original mods.
+    - Changed date format in changelog to be inline with the base game changelog.
+    - Ore silos are now hidden via the setting "Enable Angel's ore themed silos" from "Angel's Addons - Storage Options".
+  Dependencies:
+    - Made dependency optional: helmod.
+    - Made dependancies mandatory: flib, reskins-angels, reskins-bobs, reskins-library.
+    - Replaced optional dependancy Module Inserter with ModuleInserterRE.
+    - Updated mod versions.
+  Order:
+    - Moved sattelite in "Science Stuffings" tab.
+    - Moved rocket engine in "Science Stuffings" tab.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.10
-Date: 2021-04-18
+Date: 18.04.2021
   Changes:
     - Translations are now made on Crowdin (https://crowdin.com/project/factorio-mods-localization).
   Dependencies:
@@ -18,13 +34,13 @@ Date: 2021-04-18
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.9
-Date: 2021-03-10
+Date: 10.03.2021
   Bugfixes:
     - Fixed that the game wouldn't load without "Artisanal Reskins: Bob's Mods" (reskins-bobs).
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
-Date: 2021-03-10
+Date: 10.03.2021
   Features:
     - Fix for the missing tooltip for the ingredient slot of the composter from Angel's Bio Processing.
   Changes:
@@ -60,14 +76,14 @@ Date: 2021-03-10
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7
-Date: 2021-02-05
+Date: 05.02.2021
   Bugfixes:
     - Fixed that a few redundant technologies weren't hidden.
     - Fixed that un-researching an ammo turret damage bonus in the editor wouldn't reduce the bonus.
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.6
-Date: 2021-01-29
+Date: 29.01.2021
   Features:
     - Grouped all ammo turret damage bonuses together (gun and sniper turrets).
   Changes:
@@ -84,7 +100,7 @@ Date: 2021-01-29
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.5
-Date: 2021-01-10
+Date: 10.01.2021
   Features:
     - Increased small storage tank and small inline storage tank size from 2.5k to 5k.
   Changes:
@@ -131,13 +147,13 @@ Date: 2021-01-10
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.4
-Date: 2021-01-03
+Date: 03.01.2021
   Bugfixes:
     - Attempt to fix an issue in multiplayer (this mod wasn't the issue, so changes were reverted in version 1.1.5).
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.3
-Date: 2021-01-03
+Date: 03.01.2021
   Settings:
     - Changed startup setting "Enable pressure fluid tanks" from mod "Angel's Addons - Storage Options" default to "false" and hid it (does nothing).
     - Changed startup settings "Always show assembling machines" and "Always show products" from "Bob & Angel RAWs Patch" default to "false".
@@ -176,7 +192,7 @@ Date: 2021-01-03
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.2
-Date: 2021-01-01
+Date: 01.01.2021
   Changes:
     - Added list of all changes in README.md
     - Updated description.
@@ -204,6 +220,7 @@ Date: 2021-01-01
     - Added roman numerals to the two carbon dioxide recipes.
     - New icons for thermal water recipes.
     - Changed clean ceramic filter recipe icon to spent ceramic filter icon.
+    - Added charcoal filter and ceramic filter icons to coolant filtering recipe icons.
   Locale:
     - Renamed carbon dioxide recipes to "Carbon dioxide from charcoal" and "Carbon dioxide from carbon".
     - Renamed coolant filtering recipes to "Coolant coal filtering" and "Coolant ceramic filtering".
@@ -229,7 +246,7 @@ Date: 2021-01-01
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
-Date: 2020-12-28
+Date: 28.12.2020
   Features:
     - All offshore pumps can be placed anywhere on land.
   Settings:
@@ -275,7 +292,7 @@ Date: 2020-12-28
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
-Date: 2020-12-20
+Date: 20.12.2020
   Features:
     - Initial release. Forked from SeaBlockMetaPack_1.1.0
   Changes:

@@ -42,7 +42,6 @@
 * sodium
 * sodium hydroxide
 * sodium hydroxide solution
-* Diesel tech icon
 * Spidertrons
 *
 

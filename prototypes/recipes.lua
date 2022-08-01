@@ -1,59 +1,25 @@
--- COMPOST RECIPES
-data:extend(
-{
-	{
-		type = "item-group",
-		name = "ick-compost",
-    localised_name = {"", {"entity-name.composter"}},
-		order = "z",
-    icon = "__angelsbioprocessing__/graphics/technology/fermentation-tech.png",
-    icon_size = 128
-	},
-	{
-		type = "item-subgroup",
-		name = "ick-compost",
-    group = "ick-compost",
-		order = "a"
-	}
-})
-
-for _, recipe in pairs(data.raw.recipe) do
-  if string.sub(recipe.name, 1, 16) == "angels-bio-void-" then
-    recipe.hidden = false
-    recipe.hide_from_player_crafting = true
-    recipe.subgroup = "ick-compost"
-  end
-end
-
--- FUNCTIONS
---[[local function change_crafting_category(name, new_category)
-  if data.raw.recipe[name] then
-    data.raw.recipe[name].category = new_category
-  end
-end]]
-
+-- FUNCTION
 local function update_ingredient(recipe_name, item, new_count)
-  if data.raw.recipe[recipe_name] then
-    local recipe = data.raw.recipe[recipe_name].ingredients
-    for _, difficulty in pairs({"normal", "expensive"}) do
-      if data.raw.recipe[recipe_name][difficulty] and data.raw.recipe[recipe_name][difficulty].ingredients then
-        recipe = data.raw.recipe[recipe_name][difficulty].ingredients
-        break
-      end
-    end
-    if recipe then
-      for i, ingredient in pairs(recipe) do
-        if ingredient.name == item then
-          table.remove(recipe, i)
-        end
-      end
-      if new_count >= 1 then
-        table.insert(recipe, {type = "item", name = item, amount = new_count})
-      end
-    end
-  end
+	if data.raw.recipe[recipe_name] then
+		local recipe = data.raw.recipe[recipe_name].ingredients
+		for _, difficulty in pairs({"normal", "expensive"}) do
+			if data.raw.recipe[recipe_name][difficulty] and data.raw.recipe[recipe_name][difficulty].ingredients then
+				recipe = data.raw.recipe[recipe_name][difficulty].ingredients
+				break
+			end
+		end
+		if recipe then
+			for i, ingredient in pairs(recipe) do
+				if ingredient.name == item then
+					table.remove(recipe, i)
+				end
+			end
+			if new_count >= 1 then
+				table.insert(recipe, {type = "item", name = item, amount = new_count})
+			end
+		end
+	end
 end
-
 
 -- LOGISTICS
 update_ingredient("repair-pack-2", "repair-pack", 1)
@@ -99,65 +65,35 @@ end
 
 -- BOBS-LOGISTICS
 if settings.startup["ick-seablock-burner-inserter"].value == false then
-  update_ingredient("inserter", "burner-inserter", 1)
-  update_ingredient("inserter", "iron-plate", 0)
-  update_ingredient("inserter", "iron-gear-wheel", 0)
+	update_ingredient("inserter", "burner-inserter", 1)
+	update_ingredient("inserter", "iron-plate", 0)
+	update_ingredient("inserter", "iron-gear-wheel", 0)
 end
-
-if settings.startup["ick-seablock-walls-and-gates"].value == false then
-  update_ingredient("reinforced-wall", "stone-wall", 1)
-  update_ingredient("reinforced-wall", "stone-brick", 0)
-
-  update_ingredient("reinforced-gate", "gate", 1)
-  update_ingredient("reinforced-gate", "steel-plate", 3)
-  update_ingredient("reinforced-gate", "reinforced-wall", 0)
-end
-
 
 -- PRODUCTION
 update_ingredient("steel-furnace", "stone-furnace", 1)
+update_ingredient("steel-furnace", "stone-brick", 8)
 
 update_ingredient("electric-furnace", "steel-furnace", 1)
 update_ingredient("electric-furnace", "steel-plate", 4)
 update_ingredient("electric-furnace", "stone-brick", 0)
-
 
 -- COMBAT
 update_ingredient("submachine-gun", "pistol", 1)
 update_ingredient("submachine-gun", "iron-plate", 5)
 update_ingredient("submachine-gun", "copper-plate", 0)
 
-update_ingredient("rifle", "submachine-gun", 1)
-update_ingredient("rifle", "steel-plate", 5)
+update_ingredient("sniper-rifle", "submachine-gun", 1)
+update_ingredient("sniper-rifle", "steel-plate", 5)
 
-update_ingredient("sniper-rifle", "rifle", 1)
-update_ingredient("sniper-rifle", "steel-plate", 0)
-update_ingredient("sniper-rifle", "steel-gear-wheel", 0)
-
-update_ingredient("combat-shotgun", "shotgun", 1)
-update_ingredient("combat-shotgun", "wood", 5)
-update_ingredient("combat-shotgun", "iron-plate", 0)
-update_ingredient("combat-shotgun", "iron-gear-wheel", 0)
-update_ingredient("combat-shotgun", "copper-plate", 0)
-
-update_ingredient("uranium-rounds-magazine", "piercing-rounds-magazine", 1)
-update_ingredient("uranium-rounds-magazine", "uranium-238", 1)
-update_ingredient("uranium-rounds-magazine", "uranium-bullet", 0)
-update_ingredient("uranium-rounds-magazine", "magazine", 0)
-
-update_ingredient("atomic-bomb", "explosive-rocket", 1)
+update_ingredient("atomic-bomb", "rocket", 1)
 update_ingredient("atomic-bomb", "rocket-booster", 0)
-update_ingredient("atomic-bomb", "explosives", 7)
+update_ingredient("atomic-bomb", "explosives", 9)
 
 update_ingredient("explosive-cannon-shell", "cannon-shell", 1)
 update_ingredient("explosive-cannon-shell", "steel-plate", 0)
 update_ingredient("explosive-cannon-shell", "plastic-bar", 0)
 update_ingredient("explosive-cannon-shell", "explosives", 1)
-
-update_ingredient("explosive-uranium-cannon-shell", "uranium-cannon-shell", 1)
-update_ingredient("explosive-uranium-cannon-shell", "explosives", 1)
-update_ingredient("explosive-uranium-cannon-shell", "explosive-cannon-shell", 0)
-update_ingredient("explosive-uranium-cannon-shell", "uranium-238", 0)
 
 update_ingredient("heavy-armor", "light-armor", 1)
 update_ingredient("heavy-armor", "steel-plate", 44)
@@ -180,6 +116,14 @@ update_ingredient("tank", "iron-gear-wheel", 5)
 update_ingredient("tankotron", "tank", 1)
 update_ingredient("tankotron", "spidertron-cannon", 0)
 
+if settings.startup["ick-seablock-walls-and-gates"].value == false then
+	update_ingredient("reinforced-wall", "stone-wall", 1)
+	update_ingredient("reinforced-wall", "stone-brick", 0)
+
+	update_ingredient("reinforced-gate", "gate", 1)
+	update_ingredient("reinforced-gate", "steel-plate", 3)
+	update_ingredient("reinforced-gate", "reinforced-wall", 0)
+end
 
 -- PETROCHEM-REFINING
 update_ingredient("cliff-explosives", "grenade", 0)
