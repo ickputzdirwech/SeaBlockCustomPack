@@ -77,7 +77,7 @@ if data.raw.recipe["thermal-bore-water"] and data.raw.recipe["thermal-extractor-
 			tint = angelsmods.refining.number_tint
 		}}}
 	)
-	data.raw.recipe["thermal-extractor-water"].icons = angelsmods.functions.create_liquid_recipe_icon(
+	--[[ data.raw.recipe["thermal-extractor-water"].icons = angelsmods.functions.create_liquid_recipe_icon(
 		{
 		"steam"
 		},
@@ -87,7 +87,7 @@ if data.raw.recipe["thermal-bore-water"] and data.raw.recipe["thermal-extractor-
 			icon_size = 32,
 			tint = angelsmods.refining.number_tint
 		}}}
-	)
+	)]]
 end
 
 if data.raw.recipe["coolant-used-filtration-1"] and data.raw.recipe["coolant-used-filtration-2"] then
@@ -120,11 +120,13 @@ if data.raw.recipe["filter-ceramic-refurbish"] then
 end
 
 -- ENTITY
+-- (made pull request)
 if data.raw.lab["lab-2"] and data.raw.item["lab-2"] then
 	data.raw.lab["lab-2"].icons = data.raw.item["lab-2"].icons
 end
 
 -- TECHNOLOGIES
+-- (made pull request)
 if data.raw.technology["bob-infinite-worker-robots-storage-1"] and data.raw.technology["worker-robots-storage-1"] then
-	data.raw.technology["bob-infinite-worker-robots-storage-1"].icons = data.raw.technology["worker-robots-storage-1"].icons
+	data.raw.technology["bob-infinite-worker-robots-storage-1"].icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png")
 end

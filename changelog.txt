@@ -11,7 +11,7 @@ Date: 02.08.2022
     - Replaced optional dependancy Module Inserter with ModuleInserterRE.
     - Updated mod versions.
   Order:
-    - Moved sattelite in "Science Stuffings" tab.
+    - Moved satelite in "Science Stuffings" tab.
     - Moved rocket engine in "Science Stuffings" tab.
 
 ---------------------------------------------------------------------------------------------------

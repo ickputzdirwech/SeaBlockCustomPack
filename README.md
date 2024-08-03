@@ -99,7 +99,7 @@ This mod is a custom version of the [Sea Block Pack](https://mods.factorio.com/m
 * Reordered "Barrelling and fluid control" tab. (WIP)
 * Reordered "Production" tab.
 * Moved repair packs in "Logistics" tab.
-* Moved sattelite in "Science Stuffings" tab.
+* Moved satelite in "Science Stuffings" tab.
 * Reordered "Modules" tab.
 * Merged "Intermediate products" and "Bob's intermediates" tabs.
 * Reordered "Intermediate products" tab.

@@ -4,3 +4,5 @@ require("prototypes.icons")
 require("prototypes.locale")
 require("prototypes.order")
 require("prototypes.recipes")
+
+--require("prototypes.unused-prototype-properties")
